@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Dashboard — NexaFlow AI</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NexaFlow AI" />
+  <meta property="og:title" content="Client Dashboard — NexaFlow AI" />
+  <meta property="og:description" content="The NexaFlow AI client dashboard — see your leads, bookings, payments, and response rate in one place." />
+  <meta property="og:image" content="https://nexaflowai.surge.sh/og.png" />
+  <meta property="og:url" content="https://nexaflowai.surge.sh/dashboard.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Client Dashboard — NexaFlow AI" />
+  <meta name="twitter:description" content="The NexaFlow AI client dashboard — see your leads, bookings, payments, and response rate in one place." />
+  <meta name="twitter:image" content="https://nexaflowai.surge.sh/og.png" />
+
+  <meta name="description" content="The NexaFlow AI client dashboard — see your leads, bookings, payments, and response rate in one place." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Cpath d='M17.5 5 9 18h5l-1.5 9L22 14h-5z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/demos.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H10L8.5 22 17 10.5h-5.5L13 2Z" fill="#fff"/></svg>
+        </span>
+        <span>NexaFlow<span class="accent">AI</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="pay.html">Pay</a>
+        <a href="demo-chatbot.html">Demos</a>
+        <a href="ai-studio.html">AI Studio</a>
+        <a href="contact.html">Contact</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-outline" href="login.html" style="padding:10px 18px;">Sign in</a>
+        <a class="btn btn-primary" href="contact.html">Book a Free Call</a>
+        <button class="nav-toggle" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="crumbs"><a href="index.html">Home</a> / Client Dashboard</div>
+      <span style="display:inline-block; background:#ecfdf5; color:#047857; border:1px solid #a7f3d0; border-radius:999px; padding:5px 14px; font-size:12.5px; font-weight:700; letter-spacing:0.02em; margin-bottom:10px;">✓ FREE TO TRY — DEMO MODE</span>
+      <h1>Your leads &amp; payments, at a glance</h1>
+      <p class="lead">Every enquiry and card payment — collected in one dashboard. When a client pays, the lead is marked <strong>Paid</strong> automatically (via the payment webhook).</p>
+      <p><a class="btn btn-primary" href="ai-studio.html" style="margin-top:8px;">✨ Open AI Delivery Studio</a> <a class="btn btn-outline" href="settings.html" style="margin-top:8px;">⚙️ Account &amp; income</a></p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:40px;">
+    <div class="container">
+      <div class="demo-tabs">
+        <a href="demo-chatbot.html">AI Chatbot Demo</a>
+        <a href="demo-whatsapp.html">WhatsApp Lead Flow</a>
+        <a href="dashboard.html" class="active">Client Dashboard</a>
+        <a href="ai-studio.html">AI Delivery Studio</a>
+        <a href="settings.html">Account &amp; income</a>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="dash-stats">
+        <div class="dash-stat">
+          <div class="v" id="statTotal">0</div>
+          <div class="l">Total leads</div>
+          <div class="delta up" id="statDelta">+0 this week</div>
+        </div>
+        <div class="dash-stat">
+          <div class="v" id="statNew">0</div>
+          <div class="l">New / uncontacted</div>
+        </div>
+        <div class="dash-stat">
+          <div class="v" id="statBooked">0</div>
+          <div class="l">Booked</div>
+        </div>
+        <div class="dash-stat">
+          <div class="v" id="statCollected" style="color:#16a34a;">$0</div>
+          <div class="l">Collected (paid)</div>
+        </div>
+      </div>
+
+      <!-- Chart -->
+      <div class="dash-panel">
+        <h3>Leads — last 7 days</h3>
+        <p class="sub">Enquiries captured across website, WhatsApp, and chatbot.</p>
+        <div class="bars" id="bars"></div>
+      </div>
+
+      <!-- Payments -->
+      <div class="dash-panel">
+        <h3>Payments received</h3>
+        <p class="sub">Card payments confirmed by your payment webhook.</p>
+        <div class="table-scroll">
+          <table class="dash-table">
+            <thead>
+              <tr><th>Lead</th><th>Amount</th><th>Status</th><th>Payment</th></tr>
+            </thead>
+            <tbody id="payRows"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Leads table -->
+      <div class="dash-panel">
+        <h3>All leads</h3>
+        <p class="sub">Advance a lead through your pipeline, or mark it paid when money lands.</p>
+
+        <div class="panel-actions">
+          <button class="btn btn-primary" id="showForm" type="button">+ Add lead</button>
+          <button class="btn btn-outline" id="resetData" type="button">Reset demo data</button>
+        </div>
+
+        <div id="addForm" style="display:none;" class="add-lead">
+          <div class="field"><label>Name</label><input id="lfName" type="text" placeholder="Customer name" /></div>
+          <div class="field"><label>Email (for payment matching)</label><input id="lfEmail" type="email" placeholder="client@example.com" /></div>
+          <div class="field"><label>Phone / WhatsApp</label><input id="lfPhone" type="text" placeholder="+233 ..." /></div>
+          <div class="field">
+            <label>Service</label>
+            <select id="lfService">
+              <option>Website + AI + WhatsApp</option>
+              <option>Website only</option>
+              <option>Booking system</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Source</label>
+            <select id="lfSource">
+              <option>WhatsApp</option>
+              <option>Website form</option>
+              <option>Chatbot</option>
+              <option>Referral</option>
+            </select>
+          </div>
+          <div class="field full">
+            <button class="btn btn-primary" id="saveLead" type="button">Save lead</button>
+            <button class="btn btn-outline" id="cancelLead" type="button">Cancel</button>
+          </div>
+        </div>
+
+        <div class="filter-bar" id="filterBar">
+          <button class="chip active" data-f="all" type="button">All</button>
+          <button class="chip" data-f="New" type="button">New</button>
+          <button class="chip" data-f="Contacted" type="button">Contacted</button>
+          <button class="chip" data-f="Booked" type="button">Booked</button>
+          <button class="chip" data-f="Closed" type="button">Closed</button>
+          <button class="chip" data-f="paid" type="button">Paid</button>
+        </div>
+
+        <div id="noDataNote" style="display:none; background:#eef2ff; border:1px solid #c7d2fe; border-radius:12px; padding:14px 16px; margin-bottom:16px; font-size:14px; color:#334155;">
+          📭 <strong>No leads yet.</strong> Connect your Google Sheet (see <code>payments-setup.md</code>) or click <strong>&#8220;+ Add lead&#8221;</strong> to enter your first customer.
+        </div>
+
+        <div class="table-scroll">
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Service</th>
+                <th>Source</th>
+                <th>Status</th>
+                <th>Payment</th>
+                <th>Date</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="leadRows"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:24px; text-align:center; background:#eef2ff; border-color:#c7d2fe;">
+        <p style="color:#334155; font-size:14.5px;">
+          💡 <strong>How live sync works:</strong> this dashboard reads from your Google Sheet via the free Apps Script webhook
+          (or <code>data/leads.json</code>). When a client pays by card, the webhook verifies it and marks the lead <strong>Paid</strong> — no manual entry.
+          Paste your <code>/exec</code> URL into <code>CONFIG.appsScriptUrl</code> and the <code>SYNC_TOKEN</code> from
+          <code>tools/webhook.gs</code> into <code>CONFIG.appsScriptToken</code> — sync writes are rejected without it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Included with your package</span>
+        <h2>Know exactly what's working</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Every lead, one place</h3>
+          <p>Website forms, chatbot, and WhatsApp — all captured in a single, simple dashboard.</p>
+        </div>
+        <div class="card">
+          <h3>Follow up fast</h3>
+          <p>See who's new and who's waiting — so no customer ever slips through the cracks.</p>
+        </div>
+        <div class="card">
+          <h3>Measure what matters</h3>
+          <p>Track your response rate, bookings, and cash collected to see your ROI grow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="mark" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H10L8.5 22 17 10.5h-5.5L13 2Z" fill="#fff"/></svg>
+            </span>
+            <span>NexaFlow<span class="accent">AI</span></span>
+          </a>
+          <p class="footer-about">Turn visitors into customers — automatically. AI websites &amp; WhatsApp automation for ambitious local businesses.</p>
+          <div class="socials">
+            <a href="https://wa.me/233545886354" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.5-1.5-1.8-.1-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.3 0-1.1-.1-2-.1-2 0-3.4 1.2-3.4 3.5V11H8.6v3H11v7h2.5z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.9 8.6H3.6V20h3.3V8.6zM5.2 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM13 8.6h-3.2V20H13v-6c0-1.6.8-2.6 2.1-2.6 1.2 0 1.9.8 1.9 2.6v6h3.2v-6.8c0-3-1.6-4.8-4-4.8-1.8 0-2.6 1-3.2 1.8V8.6z"/></svg></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Services</h4>
+          <div class="footer-links">
+            <a href="services.html">Business Websites</a>
+            <a href="services.html">AI Customer Assistant</a>
+            <a href="services.html">WhatsApp Lead Capture</a>
+            <a href="services.html">Appointment Booking</a>
+            <a href="services.html">Google Maps &amp; Analytics</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <div class="footer-links">            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+            <a href="settings.html">Account &amp; income</a>
+            <a href="feedback.html">Leave a review</a>
+            <a href="pay.html">Pay online</a>
+            <a href="login.html">Sign in / Dashboard</a>
+            <a href="demo-chatbot.html">Live Demos</a>
+            <a href="ai-studio.html">AI Studio</a>
+            <a href="dashboard.html">Client Dashboard</a>
+            <a href="business-name-generator.html">Business Name Generator</a>
+            <a href="whatsapp-reply-builder.html">WhatsApp Reply Builder</a></div>
+        </div>
+
+        <div>
+          <h4>Get in touch</h4>
+          <div class="footer-contact">
+            <a href="https://wa.me/233545886354" target="_blank" rel="noopener">WhatsApp: +233 54 588 6354</a>
+            <a href="mailto:abdulmanafbashiru94@gmail.com">abdulmanafbashiru94@gmail.com</a>
+            <a href="tel:+233545886354">+233 54 588 6354</a>
+            <span>Accra, Greater Accra, Ghana</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 NexaFlow AI. All rights reserved.</span>
+        <span>Made for businesses that want more customers.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    if (window.NexaAuth) { NexaAuth.guardApp(); }
+  </script>
+  <script src="js/script.js"></script>
+  <script>
+    /* ============================================================
+       NexaFlow AI — Client dashboard v2 (ES5 + payments)
+       Data sources (tried in order):
+         1) Google Apps Script (live Google Sheet)  -> CONFIG.appsScriptUrl
+         2) data/leads.json (static file, if served over http)
+         3) Built-in demo seed (sample data for beginners)
+       ============================================================ */
+    (function () {
+      'use strict';
+
+      var CONFIG = {
+        appsScriptUrl: '',           // paste: https://script.google.com/macros/s/XXXX/exec
+        appsScriptToken: '',         // paste: SYNC_TOKEN from tools/webhook.gs (must match)
+        dataFile: 'data/leads.json'  // fallback static data
+      };
+
+      var KEY = 'nexaflow_leads_v2';
+      var STATUSES = ['New', 'Contacted', 'Booked', 'Closed'];
+      var currentFilter = 'all';
+      var leads = [];
+
+      var DAY_MS = 86400000;
+
+      /* ---------- helpers ---------- */
+      function dayLabel(offset) {
+        var d = new Date(Date.now() - offset * DAY_MS);
+        try { return d.toLocaleDateString(undefined, { weekday: 'short' }); }
+        catch (e) { return ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][d.getDay()]; }
+      }
+      function dateLabel(ts) {
+        var d = new Date(ts);
+        try { return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' }); }
+        catch (e) { return (d.getMonth() + 1) + '/' + d.getDate(); }
+      }
+      function money(n) {
+        return '$' + Number(n || 0).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+      }
+
+      /* ---------- demo seed (sample data for beginners) ---------- */
+      function seed() {
+        var names = ['Ama Osei', 'Kwame Mensah', 'Efua Boateng', 'Yaw Darko', 'Naa Adjei', 'Kojo Antwi',
+          'Abena Quaye', 'Fiifi Coleman', 'Aku Sika', 'Kofi Owusu', 'Adwoa B', 'Esi Tetteh', 'Yaa Asantewaa', 'Kweku F'];
+        var services = ['Website + AI + WhatsApp', 'Website only', 'Booking system', 'Website + AI + WhatsApp', 'Other'];
+        var sources = ['WhatsApp', 'Website form', 'Chatbot', 'Referral'];
+        var statuses = ['New', 'Contacted', 'Booked', 'Closed', 'New', 'Contacted', 'Booked', 'New', 'Contacted', 'Booked', 'Closed', 'Booked', 'New', 'Contacted'];
+        var pays = ['unpaid', 'deposit', 'paid', 'unpaid', 'unpaid', 'deposit', 'paid', 'unpaid', 'deposit', 'paid', 'unpaid', 'paid', 'unpaid', 'deposit'];
+        var out = [];
+        for (var i = 0; i < 14; i++) {
+          var svc = services[i % services.length];
+          var amount = 0;
+          if (pays[i] === 'deposit') { amount = 175; }
+          else if (pays[i] === 'paid') { amount = (svc.indexOf('Website + AI') === 0) ? 350 : 250; }
+          out.push({
+            id: 'L' + (1000 + i),
+            name: names[i],
+            phone: '+233 54 ' + String(1000000 + i * 13753),
+            email: '',
+            service: svc,
+            source: sources[i % sources.length],
+            status: statuses[i],
+            payment: pays[i],
+            amount: amount,
+            ts: Date.now() - (i % 7) * DAY_MS - i * 3600000
+          });
+        }
+        return out;
+      }
+
+      function saveLocal() {
+        try { localStorage.setItem(KEY, JSON.stringify(leads)); } catch (e) {}
+      }
+      function loadLocal() {
+        try {
+          var raw = localStorage.getItem(KEY);
+          if (raw) { return JSON.parse(raw); }
+        } catch (e) {}
+        var d = seed();
+        saveLocal();
+        return d;
+      }
+
+      /* ---------- load from Apps Script / JSON file / local ---------- */
+      function loadData(done) {
+        // 1) Apps Script (live Google Sheet)
+        if (CONFIG.appsScriptUrl) {
+          // READ_TOKEN is optional server-side; send it when set.
+          var readUrl = CONFIG.appsScriptUrl +
+            (CONFIG.appsScriptToken ? (CONFIG.appsScriptUrl.indexOf('?') > -1 ? '&' : '?') +
+              'token=' + encodeURIComponent(CONFIG.appsScriptToken) : '');
+          fetchJson(readUrl, function (data) {
+            if (data && data.ok === false) { loadFromFile(done); return; }
+            leads = normalize(data);
+            done('apps');
+          }, function () { loadFromFile(done); });
+          return;
+        }
+        loadFromFile(done);
+      }
+
+      function loadFromFile(done) {
+        // 2) static JSON file (only works when served over http)
+        if (typeof fetch === 'function' && window.location.protocol.indexOf('http') === 0) {
+          fetchJson(CONFIG.dataFile, function (data) {
+            leads = normalize(data);
+            done('file');
+          }, function () { leads = loadLocal(); done('local'); });
+        } else {
+          leads = loadLocal();
+          done('local');
+        }
+      }
+
+      function fetchJson(url, ok, fail) {
+        try {
+          fetch(url).then(function (r) {
+            if (!r.ok) { throw new Error('http ' + r.status); }
+            return r.json();
+          }).then(ok).catch(fail);
+        } catch (e) { fail(); }
+      }
+
+      function normalize(data) {
+        var arr = (data && data.leads) ? data.leads : data;
+        if (!arr || !arr.length) { return seed(); }
+        for (var i = 0; i < arr.length; i++) {
+          if (!arr[i].payment) { arr[i].payment = 'unpaid'; }
+          if (!arr[i].amount) { arr[i].amount = 0; }
+          if (!arr[i].email) { arr[i].email = ''; }
+        }
+        return arr;
+      }
+
+      /* ---------- persist changes (apps script OR local) ---------- */
+      function persist() {
+        if (CONFIG.appsScriptUrl) {
+          postToApps({ action: 'sync', token: CONFIG.appsScriptToken, leads: leads },
+            function () {}, function () { saveLocal(); });
+        } else {
+          saveLocal();
+        }
+      }
+
+      function postToApps(payload, ok, fail) {
+        try {
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', CONFIG.appsScriptUrl, true);
+          xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+              if (xhr.status === 200) { ok(); } else { fail(); }
+            }
+          };
+          xhr.send('payload=' + encodeURIComponent(JSON.stringify(payload)));
+        } catch (e) { fail(); }
+      }
+
+      /* ---------- stats ---------- */
+      function renderStats() {
+        var total = leads.length, nNew = 0, booked = 0, collected = 0, thisWeek = 0;
+        var weekAgo = Date.now() - 7 * DAY_MS;
+        for (var i = 0; i < leads.length; i++) {
+          var l = leads[i];
+          if (l.status === 'New') { nNew++; }
+          if (l.status === 'Booked') { booked++; }
+          if (l.payment === 'paid' || l.payment === 'deposit') { collected += (Number(l.amount) || 0); }
+          if (l.ts >= weekAgo) { thisWeek++; }
+        }
+        document.getElementById('statTotal').textContent = total;
+        document.getElementById('statNew').textContent = nNew;
+        document.getElementById('statBooked').textContent = booked;
+        document.getElementById('statCollected').textContent = money(collected);
+        document.getElementById('statDelta').textContent = '+' + thisWeek + ' this week';
+      }
+
+      /* ---------- chart ---------- */
+      function renderChart() {
+        var bars = document.getElementById('bars');
+        bars.innerHTML = '';
+        var counts = [], max = 0;
+        for (var d = 6; d >= 0; d--) {
+          var dayStart = new Date(); dayStart.setHours(0, 0, 0, 0);
+          dayStart = dayStart.getTime() - d * DAY_MS;
+          var dayEnd = dayStart + DAY_MS;
+          var c = 0;
+          for (var i = 0; i < leads.length; i++) {
+            if (leads[i].ts >= dayStart && leads[i].ts < dayEnd) { c++; }
+          }
+          counts.push(c);
+          if (c > max) { max = c; }
+        }
+        for (var j = 0; j < 7; j++) {
+          var col = document.createElement('div');
+          col.className = 'bar-col';
+          var h = max ? Math.max(6, Math.round((counts[j] / max) * 130)) : 4;
+          col.innerHTML =
+            '<div class="cnt">' + counts[j] + '</div>' +
+            '<div class="bar" style="height:' + h + 'px;"></div>' +
+            '<div class="day">' + dayLabel(6 - j) + '</div>';
+          bars.appendChild(col);
+        }
+      }
+
+      /* ---------- payments panel ---------- */
+      function renderPayments() {
+        var rows = document.getElementById('payRows');
+        rows.innerHTML = '';
+        var paid = [];
+        for (var i = 0; i < leads.length; i++) {
+          if (leads[i].payment === 'paid' || leads[i].payment === 'deposit') { paid.push(leads[i]); }
+        }
+        if (!paid.length) {
+          var tr = document.createElement('tr');
+          tr.innerHTML = '<td colspan="4" style="text-align:center;color:#64748b;padding:24px;">No payments yet — they\u2019ll appear here automatically.</td>';
+          rows.appendChild(tr);
+          return;
+        }
+        for (var j = 0; j < paid.length; j++) {
+          var l = paid[j];
+          var tr2 = document.createElement('tr');
+          tr2.innerHTML =
+            '<td><strong>' + l.name + '</strong></td>' +
+            '<td style="color:#16a34a; font-weight:700;">' + money(l.amount) + '</td>' +
+            '<td><span class="status st-booked">Paid</span></td>' +
+            '<td>' + (l.payment === 'deposit' ? '50% deposit' : 'Full payment') + '</td>';
+          rows.appendChild(tr2);
+        }
+      }
+
+      /* ---------- leads table ---------- */
+      function paymentBadge(p) {
+        if (p === 'paid') { return '<span class="status st-booked">Paid</span>'; }
+        if (p === 'deposit') { return '<span class="status st-contacted">Deposit</span>'; }
+        return '<span class="status st-closed">Unpaid</span>';
+      }
+
+      function renderTable() {
+        var rows = document.getElementById('leadRows');
+        rows.innerHTML = '';
+        var list = leads;
+        if (currentFilter === 'paid') {
+          list = leads.filter(function (l) { return l.payment === 'paid' || l.payment === 'deposit'; });
+        } else if (currentFilter !== 'all') {
+          list = leads.filter(function (l) { return l.status === currentFilter; });
+        }
+        if (!list.length) {
+          var tr = document.createElement('tr');
+          tr.innerHTML = '<td colspan="8" style="text-align:center;color:#64748b;padding:24px;">No leads in this view yet.</td>';
+          rows.appendChild(tr);
+          return;
+        }
+        for (var i = 0; i < list.length; i++) {
+          (function (lead) {
+            var tr = document.createElement('tr');
+            var nextIdx = STATUSES.indexOf(lead.status) + 1;
+            var nextLabel = nextIdx < STATUSES.length ? STATUSES[nextIdx] + ' →' : '—';
+            tr.innerHTML =
+              '<td><strong>' + lead.name + '</strong></td>' +
+              '<td>' + lead.phone + '</td>' +
+              '<td>' + lead.service + '</td>' +
+              '<td>' + lead.source + '</td>' +
+              '<td><span class="status st-' + lead.status.toLowerCase() + '">' + lead.status + '</span></td>' +
+              '<td>' + paymentBadge(lead.payment) + '</td>' +
+              '<td>' + dateLabel(lead.ts) + '</td>' +
+              '<td style="white-space:nowrap;">' +
+                '<button class="next" type="button" data-a="advance">' + nextLabel + '</button>' +
+                '<button class="next" type="button" data-a="pay" style="margin-left:10px; color:#16a34a;">' + (lead.payment === 'unpaid' ? 'Mark paid' : 'Unmark') + '</button>' +
+              '</td>';
+            rows.appendChild(tr);
+
+            var adv = tr.querySelector('[data-a="advance"]');
+            if (nextLabel === '—') { adv.style.color = '#94a3b8'; adv.style.cursor = 'default'; }
+            else {
+              adv.addEventListener('click', function () {
+                lead.status = STATUSES[nextIdx];
+                persist();
+                renderAll();
+              });
+            }
+            tr.querySelector('[data-a="pay"]').addEventListener('click', function () {
+              if (lead.payment === 'unpaid') {
+                lead.payment = 'paid';
+                if (!lead.amount) { lead.amount = 350; }
+              } else {
+                lead.payment = 'unpaid';
+                lead.amount = 0;
+              }
+              persist();
+              renderAll();
+            });
+          })(list[i]);
+        }
+      }
+
+      function renderAll() {
+        renderStats();
+        renderChart();
+        renderPayments();
+        renderTable();
+        var note = document.getElementById('noDataNote');
+        if (note) { note.style.display = leads.length ? 'none' : 'block'; }
+      }
+
+      /* ---------- filters ---------- */
+      var filterBar = document.getElementById('filterBar');
+      var filterChips = filterBar.querySelectorAll('.chip');
+      for (var f = 0; f < filterChips.length; f++) {
+        filterChips[f].addEventListener('click', function () {
+          currentFilter = this.getAttribute('data-f');
+          for (var k = 0; k < filterChips.length; k++) { filterChips[k].classList.remove('active'); }
+          this.classList.add('active');
+          renderTable();
+        });
+      }
+
+      /* ---------- add lead ---------- */
+      var showForm = document.getElementById('showForm');
+      var addForm = document.getElementById('addForm');
+      var saveLead = document.getElementById('saveLead');
+      var cancelLead = document.getElementById('cancelLead');
+      var resetData = document.getElementById('resetData');
+
+      showForm.addEventListener('click', function () {
+        addForm.style.display = addForm.style.display === 'none' ? 'flex' : 'none';
+      });
+      cancelLead.addEventListener('click', function () { addForm.style.display = 'none'; });
+      resetData.addEventListener('click', function () {
+        leads = seed();
+        persist();
+        currentFilter = 'all';
+        for (var c3 = 0; c3 < filterChips.length; c3++) {
+          filterChips[c3].classList.toggle('active', filterChips[c3].getAttribute('data-f') === 'all');
+        }
+        renderAll();
+      });
+      saveLead.addEventListener('click', function () {
+        var name = document.getElementById('lfName').value.replace(/^\s+|\s+$/g, '');
+        var phone = document.getElementById('lfPhone').value.replace(/^\s+|\s+$/g, '');
+        var email = document.getElementById('lfEmail').value.replace(/^\s+|\s+$/g, '');
+        if (!name) { alert('Please enter a name.'); return; }
+        leads.unshift({
+          id: 'L' + Date.now(),
+          name: name,
+          phone: phone || '—',
+          email: email,
+          service: document.getElementById('lfService').value,
+          source: document.getElementById('lfSource').value,
+          status: 'New',
+          payment: 'unpaid',
+          amount: 0,
+          ts: Date.now()
+        });
+        persist();
+        document.getElementById('lfName').value = '';
+        document.getElementById('lfPhone').value = '';
+        document.getElementById('lfEmail').value = '';
+        addForm.style.display = 'none';
+        currentFilter = 'all';
+        for (var c2 = 0; c2 < filterChips.length; c2++) {
+          filterChips[c2].classList.toggle('active', filterChips[c2].getAttribute('data-f') === 'all');
+        }
+        renderAll();
+      });
+
+
+      /* ---------- boot ---------- */
+      loadData(function () { renderAll(); });
+    })();
+  </script>
+  <script>
+    if (window.NexaAuth) { NexaAuth.initAppPage(); }
+  </script>
+</body>
+</html>

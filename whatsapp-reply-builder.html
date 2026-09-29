@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free WhatsApp Auto-Reply Builder — NexaFlow AI</title>
+  <meta name="description" content="Generate professional WhatsApp greeting, away and auto-reply messages for your business in seconds — trained on your services, hours and FAQs. Free tool." />
+  <meta name="keywords" content="whatsapp business messages, whatsapp auto reply, whatsapp greeting message, business reply templates, whatsapp automation, AI chatbot" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Cpath d='M17.5 5 9 18h5l-1.5 9L22 14h-5z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/demos.css" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NexaFlow AI" />
+  <meta property="og:title" content="Free WhatsApp Auto-Reply Builder — NexaFlow AI" />
+  <meta property="og:description" content="Professional WhatsApp greeting, away and auto-reply messages for your business — generated in seconds." />
+  <meta property="og:image" content="https://nexaflowai.surge.sh/og.png" />
+  <meta property="og:url" content="https://nexaflowai.surge.sh/whatsapp-reply-builder.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free WhatsApp Auto-Reply Builder — NexaFlow AI" />
+  <meta name="twitter:description" content="Professional WhatsApp greeting, away and auto-reply messages for your business — generated in seconds." />
+  <meta name="twitter:image" content="https://nexaflowai.surge.sh/og.png" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H10L8.5 22 17 10.5h-5.5L13 2Z" fill="#fff"/></svg>
+        </span>
+        <span>NexaFlow<span class="accent">AI</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="pay.html">Pay</a>
+        <a href="demo-chatbot.html">Demos</a>
+        <a href="ai-studio.html">AI Studio</a>
+        <a href="contact.html">Contact</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-outline" href="login.html" style="padding:10px 18px;">Sign in</a>
+        <a class="btn btn-primary" href="contact.html">Book a Free Call</a>
+        <button class="nav-toggle" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="crumbs"><a href="index.html">Home</a> / WhatsApp Reply Builder</div>
+      <span style="display:inline-block; background:#ecfdf5; color:#047857; border:1px solid #a7f3d0; border-radius:999px; padding:5px 14px; font-size:12.5px; font-weight:700; letter-spacing:0.02em; margin-bottom:10px;">✓ FREE TOOL — NO SIGN-UP</span>
+      <h1>WhatsApp messages that sell for you</h1>
+      <p class="lead">Generate a professional greeting, an away/auto-reply, and ready-made answers to common questions — for your business, in seconds.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:40px;">
+    <div class="container">
+      <div class="form-card" style="max-width:760px; margin:0 auto; padding:28px;">
+        <div class="form-row">
+          <div class="field">
+            <label for="waBiz">Business name *</label>
+            <input id="waBiz" type="text" placeholder="Ama's Beauty Lounge" />
+          </div>
+          <div class="field">
+            <label for="waType">Business type</label>
+            <select id="waType">
+              <option value="salon">Salon &amp; Beauty</option>
+              <option value="restaurant">Restaurant / Food</option>
+              <option value="fashion">Fashion / Clothing</option>
+              <option value="gym">Gym / Fitness</option>
+              <option value="clinic">Clinic / Health</option>
+              <option value="realestate">Real Estate</option>
+              <option value="school">School / Academy</option>
+              <option value="hotel">Hotel / Guesthouse</option>
+              <option value="auto">Auto / Car Care</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-lg btn-block" id="waBtn" type="button">💬 Generate replies</button>
+      </div>
+
+      <div id="waResults" style="display:none; margin-top:30px; max-width:760px; margin-left:auto; margin-right:auto;"></div>
+
+      <p style="max-width:760px; margin:28px auto 0; text-align:center; color:#64748b; font-size:14px;">
+        Want the full version — an AI that <em>actually replies</em> to your customers 24/7 and books them in?
+        <a href="ai-studio.html" style="color:#4f46e5; font-weight:600;">Build your website + AI assistant free →</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="container" style="max-width:760px;">
+      <h2 style="font-size:24px; margin-bottom:16px;">How to use these in WhatsApp Business</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <div class="form-card" style="flex:1 1 220px; padding:20px;">
+          <h3 style="font-size:16px; margin-bottom:8px;">1. Greeting message</h3>
+          <p style="font-size:14px; color:#5b6779;">WhatsApp Business → Settings → Business tools → Greeting message. Paste it and save.</p>
+        </div>
+        <div class="form-card" style="flex:1 1 220px; padding:20px;">
+          <h3 style="font-size:16px; margin-bottom:8px;">2. Away message</h3>
+          <p style="font-size:14px; color:#5b6779;">Same menu → Away message. Set your hours and paste the auto-reply.</p>
+        </div>
+        <div class="form-card" style="flex:1 1 220px; padding:20px;">
+          <h3 style="font-size:16px; margin-bottom:8px;">3. Quick replies</h3>
+          <p style="font-size:14px; color:#5b6779;">Save the answers as Quick replies (use "/" shortcuts) so you reply in one tap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="mark" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H10L8.5 22 17 10.5h-5.5L13 2Z" fill="#fff"/></svg>
+            </span>
+            <span>NexaFlow<span class="accent">AI</span></span>
+          </a>
+          <p class="footer-about">Turn visitors into customers — automatically. AI websites &amp; WhatsApp automation for ambitious local businesses.</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <div class="footer-links">
+            <a href="services.html">Business Websites</a>
+            <a href="services.html">AI Customer Assistant</a>
+            <a href="services.html">WhatsApp Lead Capture</a>
+            <a href="services.html">Appointment Booking</a>
+            <a href="services.html">Google Maps &amp; Analytics</a>
+          </div>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+            <a href="settings.html">Account &amp; income</a>
+            <a href="feedback.html">Leave a review</a>
+            <a href="pay.html">Pay online</a>
+            <a href="login.html">Sign in / Dashboard</a>
+            <a href="demo-chatbot.html">Live Demos</a>
+            <a href="ai-studio.html">AI Studio</a>
+            <a href="dashboard.html">Client Dashboard</a>
+          </div>
+        </div>
+        <div>
+          <h4>Free tools</h4>
+          <div class="footer-links">
+            <a href="business-name-generator.html">Business Name Generator</a>
+            <a href="whatsapp-reply-builder.html">WhatsApp Reply Builder</a>
+          </div>
+          <h4 style="margin-top:18px;">Get in touch</h4>
+          <div class="footer-contact">
+            <a href="https://wa.me/233545886354" target="_blank" rel="noopener">WhatsApp: +233 54 588 6354</a>
+            <a href="mailto:abdulmanafbashiru94@gmail.com">abdulmanafbashiru94@gmail.com</a>
+            <span>Accra, Greater Accra, Ghana</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 NexaFlow AI. All rights reserved.</span>
+        <span>Made for businesses that want more customers.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/ai-studio.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var AI = window.NexaAI;
+      function $(id) { return document.getElementById(id); }
+      function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]; }); }
+
+      function render() {
+        var biz = $('waBiz').value.replace(/^\s+|\s+$/g, '');
+        var type = $('waType').value;
+        if (!biz) { biz = 'Your Business'; }
+        var d = AI ? AI.build({ name: '', business: biz, type: type, city: '', phone: '0545886354', pkg: 'Core' }) : null;
+        var welcome = d ? d.assistant.welcome : 'Hi! Welcome to ' + biz + '.';
+        var waReply = d ? d.assistant.waReply : 'Thanks for messaging ' + biz + '!';
+        var qa = d ? d.assistant.qa : [];
+
+        var html = '<h2 style="font-size:22px; margin-bottom:16px;">Your WhatsApp messages</h2>';
+
+        function block(title, body, label) {
+          return '<div class="form-card" style="padding:20px; margin-bottom:16px;">' +
+            '<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">' +
+              '<h3 style="font-size:16px;">' + title + '</h3>' +
+              '<button class="btn btn-outline copy-btn" type="button" data-copy="' + label + '" style="padding:7px 14px; font-size:13px;">Copy</button>' +
+            '</div>' +
+            '<p id="cp_' + label + '" style="font-size:14px; color:#334155; white-space:pre-wrap; background:#f8fafc; border:1px solid #e5e9f0; border-radius:10px; padding:14px;">' + esc(body) + '</p>' +
+          '</div>';
+        }
+
+        html += block('👋 Greeting message (new customers)', welcome, 'welcome');
+        html += block('🕐 Away / auto-reply message', waReply, 'away');
+
+        html += '<h3 style="font-size:17px; margin:22px 0 12px;">⚡ Quick answers (save as quick replies)</h3>';
+        for (var i = 0; i < qa.length; i++) {
+          html += block(qa[i].q, qa[i].a, 'q' + i);
+        }
+
+        html += '<p style="text-align:center; color:#64748b; font-size:14px; margin-top:8px;">' +
+          'This is what your customers will hear — generated for <strong>' + esc(biz) + '</strong>. ' +
+          '<a href="ai-studio.html?b=' + encodeURIComponent(biz) + '&t=' + encodeURIComponent(type) + '&go=1" style="color:#4f46e5; font-weight:600;">Turn it into a live AI chatbot →</a></p>';
+
+        $('waResults').innerHTML = html;
+        $('waResults').style.display = 'block';
+        $('waResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        var btns = document.querySelectorAll('.copy-btn');
+        for (var b = 0; b < btns.length; b++) {
+          btns[b].addEventListener('click', function () {
+            var target = $('cp_' + this.getAttribute('data-copy'));
+            try {
+              var range = document.createRange();
+              range.selectNodeContents(target);
+              var sel = window.getSelection();
+              sel.removeAllRanges();
+              sel.addRange(range);
+              document.execCommand('copy');
+              sel.removeAllRanges();
+              this.textContent = '✓ Copied';
+              var self = this;
+              setTimeout(function () { self.textContent = 'Copy'; }, 1500);
+            } catch (e) {
+              this.textContent = 'Select & copy';
+            }
+          });
+        }
+      }
+
+      $('waBtn').addEventListener('click', render);
+      $('waBiz').addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); render(); } });
+    })();
+  </script>
+</body>
+</html>

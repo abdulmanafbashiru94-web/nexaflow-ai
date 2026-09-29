@@ -1,0 +1,161 @@
+/* ============================================================
+   NexaFlow AI — Auth / security styles (auth.css)
+   ============================================================ */
+
+/* ---------- Login page ---------- */
+.auth-page { background: #f7f9fc; min-height: 100vh; }
+.auth-header { display: flex; align-items: center; height: 72px; }
+.auth-wrap { padding: 40px 24px 80px; }
+.auth-card {
+  max-width: 440px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #e5e9f0;
+  border-radius: 20px;
+  padding: 36px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05), 0 24px 48px -16px rgba(15, 23, 42, 0.18);
+}
+.auth-logo { text-align: center; margin-bottom: 8px; }
+.auth-logo .mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 52px; height: 52px; border-radius: 15px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  box-shadow: 0 10px 22px -6px rgba(79, 70, 229, 0.55);
+}
+.auth-title { text-align: center; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; margin: 14px 0 4px; }
+.auth-sub { text-align: center; color: #64748b; font-size: 14.5px; margin-bottom: 24px; }
+
+.auth-tabs { display: flex; background: #f1f5f9; border-radius: 12px; padding: 4px; margin-bottom: 22px; }
+.auth-tab {
+  flex: 1 1 0;
+  text-align: center;
+  padding: 10px;
+  border-radius: 9px;
+  font-weight: 600;
+  font-size: 14.5px;
+  color: #64748b;
+}
+.auth-tab.active { background: #ffffff; color: #0f172a; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.1); }
+
+.field-rel { position: relative; }
+.pw-toggle {
+  position: absolute; right: 12px; top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 13px; font-weight: 600; color: #4f46e5;
+  background: none; border: none; cursor: pointer;
+}
+
+.strength { height: 6px; border-radius: 999px; background: #eef2f7; margin: 6px 0 2px; overflow: hidden; }
+.strength-bar { height: 100%; width: 0; border-radius: 999px; transition: width 0.2s ease, background 0.2s ease; }
+.strength-bar.s1 { width: 25%; background: #dc2626; }
+.strength-bar.s2 { width: 50%; background: #f59e0b; }
+.strength-bar.s3 { width: 75%; background: #eab308; }
+.strength-bar.s4 { width: 100%; background: #16a34a; }
+.strength-label { font-size: 12px; color: #64748b; }
+
+.form-msg { display: none; border-radius: 10px; padding: 11px 14px; font-size: 13.5px; margin-bottom: 14px; }
+.form-msg.err { display: block; background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+.form-msg.ok { display: block; background: #ecfdf3; color: #15803d; border: 1px solid #bbf7d0; }
+
+.demo-banner {
+  display: none;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #b45309;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.auth-status { border-radius: 10px; padding: 10px 14px; font-size: 13px; font-weight: 600; margin-bottom: 16px; }
+.auth-status.ok { background: #ecfdf3; color: #15803d; border: 1px solid #bbf7d0; }
+.auth-status.warn { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+
+.divider { display: flex; align-items: center; margin: 20px 0; color: #94a3b8; font-size: 12.5px; }
+.divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: #e5e9f0; }
+.divider::before { margin-right: 12px; }
+.divider::after { margin-left: 12px; }
+
+.btn-google {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 100%; padding: 13px; border-radius: 999px;
+  background: #ffffff; border: 1px solid #e5e9f0; font-weight: 600; font-size: 15px; color: #0f172a;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+.btn-google svg, .btn-google img { margin-right: 10px; }
+.btn-google:hover { background: #f8fafc; }
+.btn-google:disabled { opacity: 0.6; }
+
+/* Quick access */
+.quick-access { margin-top: 22px; border-top: 1px solid #e5e9f0; padding-top: 18px; }
+.qa-title { font-size: 13px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+.qa-btns { display: flex; flex-wrap: wrap; }
+.qa-btns .btn { margin: 0 10px 10px 0; }
+
+/* PIN pad */
+.pin-dots {
+  text-align: center; font-size: 26px; letter-spacing: 10px; color: #4f46e5;
+  margin: 8px 0 16px; min-height: 34px;
+}
+.pin-pad {
+  display: flex; flex-wrap: wrap; width: 216px; margin: 0 auto;
+}
+.pk {
+  width: 62px; height: 56px; margin: 5px;
+  border-radius: 12px; background: #f1f5f9; border: 1px solid #e5e9f0;
+  font-size: 19px; font-weight: 700; color: #0f172a;
+}
+.pk:hover { background: #eef2ff; border-color: #4f46e5; }
+.pk-x { color: #64748b; }
+
+/* Security settings */
+.sec-box { margin-top: 18px; border-top: 1px solid #e5e9f0; padding-top: 16px; }
+.sec-status { font-size: 13px; color: #64748b; margin-bottom: 10px; }
+
+/* ---------- Lock overlay (app page) ---------- */
+.lock-overlay {
+  position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 999;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.lock-card {
+  background: #ffffff; border-radius: 20px; padding: 36px 32px;
+  width: 320px; max-width: 100%; text-align: center;
+  box-shadow: 0 28px 56px -16px rgba(15, 23, 42, 0.4);
+}
+.lock-brand { font-weight: 800; font-size: 15px; letter-spacing: -0.01em; color: #4f46e5; margin-bottom: 14px; }
+.lock-title { font-size: 20px; font-weight: 800; margin-bottom: 4px; }
+.lock-sub { font-size: 13.5px; color: #64748b; margin-bottom: 10px; }
+.lock-fp { margin-top: 8px; }
+.lock-signout {
+  margin-top: 14px; background: none; border: none; color: #94a3b8; font-size: 13.5px;
+  text-decoration: underline; cursor: pointer;
+}
+.lock-signout:hover { color: #dc2626; }
+
+/* ---------- User bar (app page) ---------- */
+.user-bar {
+  background: #0f172a; color: #e2e8f0;
+  padding: 10px 0; font-size: 13.5px;
+}
+.user-bar-inner { display: flex; align-items: center; flex-wrap: wrap; }
+.ub-avatar {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff; display: flex; align-items: center; justify-content: center;
+  font-weight: 700; margin-right: 10px; flex: 0 0 auto;
+}
+.ub-name { font-weight: 700; margin-right: 8px; }
+.ub-method { color: #94a3b8; margin-right: auto; }
+.ub-actions { display: flex; }
+.ub-actions .btn, .ub-actions a.btn { padding: 6px 14px; font-size: 13px; margin-left: 8px; }
+
+@media (max-width: 560px) {
+  .auth-card { padding: 26px 20px; }
+  .ub-method { width: 100%; order: 3; margin-top: 6px; }
+}

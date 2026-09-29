@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account &amp; Income — NexaFlow AI</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NexaFlow AI" />
+  <meta property="og:title" content="Account &amp; Income — NexaFlow AI" />
+  <meta property="og:description" content="Manage your NexaFlow AI account, security settings, and view your income — net of fees — in one place." />
+  <meta property="og:image" content="https://nexaflowai.surge.sh/og.png" />
+  <meta property="og:url" content="https://nexaflowai.surge.sh/settings.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Account &amp; Income — NexaFlow AI" />
+  <meta name="twitter:description" content="Manage your NexaFlow AI account, security settings, and view your income — net of fees — in one place." />
+  <meta name="twitter:image" content="https://nexaflowai.surge.sh/og.png" />
+
+  <meta name="description" content="Manage your NexaFlow AI account, security settings, and view your income — net of fees — in one place." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Cpath d='M17.5 5 9 18h5l-1.5 9L22 14h-5z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/demos.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H10L8.5 22 17 10.5h-5.5L13 2Z" fill="#fff"/></svg>
+        </span>
+        <span>NexaFlow<span class="accent">AI</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="pay.html">Pay</a>
+        <a href="demo-chatbot.html">Demos</a>
+        <a href="ai-studio.html">AI Studio</a>
+        <a href="contact.html">Contact</a>
+        <a href="settings.html" class="active">Settings</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-outline" href="login.html" style="padding:10px 18px;">Sign in</a>
+        <a class="btn btn-primary" href="contact.html">Book a Free Call</a>
+        <button class="nav-toggle" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="crumbs"><a href="index.html">Home</a> / Settings</div>
+      <span style="display:inline-block; background:#ecfdf5; color:#047857; border:1px solid #a7f3d0; border-radius:999px; padding:5px 14px; font-size:12.5px; font-weight:700; letter-spacing:0.02em; margin-bottom:10px;">✓ YOUR ACCOUNT</span>
+      <h1>Account &amp; income</h1>
+      <p class="lead">Manage your profile and security, and see exactly what you've earned — in dollars, net of fees.</p>
+      <p style="margin-top:14px;">
+        <a class="btn btn-primary" href="dashboard.html">Open Dashboard</a>
+        <a class="btn btn-outline" href="login.html" id="signOutLink" style="margin-left:8px;">Sign out</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= ACCOUNT + SECURITY ================= -->
+  <section class="section" style="padding-top:40px;">
+    <div class="container" style="display:flex; flex-wrap:wrap; gap:24px;">
+
+      <!-- Account management -->
+      <div class="form-card" style="flex:1 1 320px; padding:28px;">
+        <h2 style="font-size:22px; margin-bottom:4px;">Account management</h2>
+        <p style="color:#64748b; font-size:14px; margin-bottom:20px;">Who you are and how clients reach you.</p>
+
+        <div style="background:#f8fafc; border:1px solid #e5e9f0; border-radius:12px; padding:16px; margin-bottom:20px;">
+          <div style="font-weight:800; font-size:16px;" id="accName">—</div>
+          <div style="color:#64748b; font-size:14px;" id="accEmail">—</div>
+          <div style="margin-top:6px; font-size:12.5px; color:#b45309; background:#fef3c7; display:inline-block; border-radius:999px; padding:3px 11px; font-weight:600;" id="accMethod">Demo mode</div>
+        </div>
+
+        <div class="field">
+          <label for="pBusiness">Your business / brand name</label>
+          <input id="pBusiness" type="text" placeholder="NexaFlow AI" />
+        </div>
+        <div class="field">
+          <label for="pWhatsapp">Your WhatsApp (international, no +)</label>
+          <input id="pWhatsapp" type="text" placeholder="233545886354" />
+        </div>
+        <div class="field">
+          <label for="pCity">City / area</label>
+          <input id="pCity" type="text" placeholder="Accra, Ghana" />
+        </div>
+        <button class="btn btn-primary btn-block" id="profileSave" type="button">Save profile</button>
+        <p class="hint" style="margin-top:10px; font-size:12.5px; color:#94a3b8;">Saved to this browser. Connect real accounts (Firebase) to sync across devices — see <a href="docs/firebase-setup.md" style="color:#4f46e5;">firebase-setup.md</a>.</p>
+      </div>
+
+      <!-- Security -->
+      <div class="form-card" style="flex:1 1 320px; padding:28px;">
+        <h2 style="font-size:22px; margin-bottom:4px;">Security</h2>
+        <p style="color:#64748b; font-size:14px; margin-bottom:20px;">Lock your account with a PIN or fingerprint.</p>
+
+        <div style="border:1px solid #e5e9f0; border-radius:12px; padding:16px; margin-bottom:12px;">
+          <div style="font-weight:700; font-size:15px;" id="secPin">PIN: —</div>
+          <div style="font-weight:700; font-size:15px; margin-top:6px;" id="secFp">Fingerprint: —</div>
+        </div>
+        <p style="font-size:13.5px; color:#64748b; margin-bottom:16px;">
+          Your fingerprint never leaves your device, and your PIN is stored as a hash.
+          Set or change these on the sign-in page.
+        </p>
+        <a class="btn btn-outline btn-block" href="login.html">🔒 Manage PIN &amp; fingerprint</a>
+      </div>
+
+      <!-- Grow: invite & earn -->
+      <div class="form-card" style="flex:1 1 320px; padding:28px;">
+        <h2 style="font-size:22px; margin-bottom:4px;">📣 Invite &amp; earn</h2>
+        <p style="color:#64748b; font-size:14px; margin-bottom:16px;">
+          Share your invite link. When a friend visits and books, you <strong>both get 10% off</strong>.
+          Their enquiry even carries your code automatically.
+        </p>
+        <div class="field">
+          <label for="refLink">Your invite link</label>
+          <input id="refLink" type="text" readonly style="width:100%; padding:11px 13px; border:1px solid #e5e9f0; border-radius:10px; font:inherit; font-size:13px; color:#334155; background:#f8fafc;" />
+        </div>
+        <button class="btn btn-primary btn-block" id="refCopy" type="button">Copy invite link</button>
+        <div style="display:flex; gap:8px; margin-top:10px;">
+          <a class="btn btn-outline" id="refWa" href="#" target="_blank" rel="noopener" style="flex:1; padding:9px 12px;">WhatsApp</a>
+          <a class="btn btn-outline" id="refX" href="#" target="_blank" rel="noopener" style="flex:1; padding:9px 12px;">X / Twitter</a>
+        </div>
+        <p style="margin-top:12px; font-size:12.5px; color:#94a3b8;">
+          💡 Your clients' websites already link back with <strong>their own code</strong> — every visitor they send you is tracked automatically.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= INCOME ================= -->
+  <section class="section" style="padding-top:8px;">
+    <div class="container">
+      <h2 style="font-size:24px; margin-bottom:4px;">Your income</h2>
+      <p style="color:#64748b; font-size:14.5px; margin-bottom:22px;">
+        Earnings in USD, <strong>net of the 1.95% Paystack fee</strong> (Ghana). Payouts settle in GHS (T+1).
+      </p>
+
+      <div class="dash-stats" style="margin-bottom:24px;">
+        <div class="dash-stat">
+          <div class="v" id="incGross">$0</div>
+          <div class="l">Collected (gross)</div>
+        </div>
+        <div class="dash-stat">
+          <div class="v" id="incFees">$0</div>
+          <div class="l">Paystack fees (1.95%)</div>
+        </div>
+        <div class="dash-stat">
+          <div class="v" style="color:#16a34a;" id="incNet">$0</div>
+          <div class="l">Your income (net)</div>
+        </div>
+        <div class="dash-stat">
+          <div class="v" id="incClients">0</div>
+          <div class="l">Paid clients</div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start;">
+        <!-- per-package net -->
+        <div class="form-card" style="flex:1 1 300px; padding:24px;">
+          <h3 style="font-size:17px; margin-bottom:14px;">Net by package</h3>
+          <table style="width:100%; border-collapse:collapse; font-size:14px;">
+            <tr style="color:#64748b; text-align:left;">
+              <th style="padding:8px 0; font-weight:600;">Package</th>
+              <th style="padding:8px 0; font-weight:600;">Clients</th>
+              <th style="padding:8px 0; font-weight:600; text-align:right;">Net</th>
+            </tr>
+            <tr style="border-top:1px solid #eef1f6;">
+              <td style="padding:9px 0;">Essential ($250)</td>
+              <td style="padding:9px 0;" id="planEssentialC">0</td>
+              <td style="padding:9px 0; text-align:right; font-weight:700;" id="planEssentialN">$0.00</td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f6;">
+              <td style="padding:9px 0;">Core ($350)</td>
+              <td style="padding:9px 0;" id="planCoreC">0</td>
+              <td style="padding:9px 0; text-align:right; font-weight:700;" id="planCoreN">$0.00</td>
+            </tr>
+            <tr style="border-top:1px solid #eef1f6;">
+              <td style="padding:9px 0;">Growth ($400)</td>
+              <td style="padding:9px 0;" id="planGrowthC">0</td>
+              <td style="padding:9px 0; text-align:right; font-weight:700;" id="planGrowthN">$0.00</td>
+            </tr>
+          </table>
+          <p style="margin-top:14px; font-size:13px; color:#64748b; background:#f8fafc; border:1px solid #e5e9f0; border-radius:10px; padding:12px;">
+            📈 <strong>Projection:</strong> 4 Core clients ≈ <strong>$1,373 net</strong> · 12 Core clients ≈ <strong>$4,118 net</strong>.
+          </p>
+        </div>
+
+        <!-- recent payments -->
+        <div class="form-card" style="flex:1 1 380px; padding:24px;">
+          <h3 style="font-size:17px; margin-bottom:6px;">Recent payments</h3>
+          <p style="font-size:13px; color:#64748b; margin-bottom:12px;">Each paid client, with the net amount after fees.</p>
+          <table style="width:100%; border-collapse:collapse; font-size:14px;">
+            <tr style="color:#64748b; text-align:left;">
+              <th style="padding:8px 0; font-weight:600;">Client</th>
+              <th style="padding:8px 0; font-weight:600;">Service</th>
+              <th style="padding:8px 0; font-weight:600; text-align:right;">Paid</th>
+              <th style="padding:8px 0; font-weight:600; text-align:right;">Net</th>
+            </tr>
+            <tbody id="payRows"></tbody>
+          </table>
+          <p style="margin-top:14px; font-size:13px; color:#b45309; background:#fef3c7; border:1px solid #fde68a; border-radius:10px; padding:12px;">
+            💳 Payments are currently in <strong>Paystack test mode</strong>. Once you swap in your live key, real card payments appear here automatically (via the webhook).
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="mark" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H10L8.5 22 17 10.5h-5.5L13 2Z" fill="#fff"/></svg>
+            </span>
+            <span>NexaFlow<span class="accent">AI</span></span>
+          </a>
+          <p class="footer-about">Turn visitors into customers — automatically. AI websites &amp; WhatsApp automation for ambitious local businesses.</p>
+          <div class="socials">
+            <a href="https://wa.me/233545886354" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.5-1.5-1.8-.1-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <div class="footer-links">
+            <a href="services.html">Business Websites</a>
+            <a href="services.html">AI Customer Assistant</a>
+            <a href="services.html">WhatsApp Lead Capture</a>
+            <a href="services.html">Appointment Booking</a>
+            <a href="services.html">Google Maps &amp; Analytics</a>
+          </div>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+            <a href="feedback.html">Leave a review</a>
+            <a href="pay.html">Pay online</a>
+            <a href="login.html">Sign in / Dashboard</a>
+            <a href="demo-chatbot.html">Live Demos</a>
+            <a href="ai-studio.html">AI Studio</a>
+            <a href="dashboard.html">Client Dashboard</a>
+            <a href="settings.html">Account &amp; income</a>
+          </div>
+        </div>
+        <div>
+          <h4>Get in touch</h4>
+          <div class="footer-contact">
+            <a href="https://wa.me/233545886354" target="_blank" rel="noopener">WhatsApp: +233 54 588 6354</a>
+            <a href="mailto:abdulmanafbashiru94@gmail.com">abdulmanafbashiru94@gmail.com</a>
+            <a href="tel:+233545886354">+233 54 588 6354</a>
+            <span>Accra, Greater Accra, Ghana</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 NexaFlow AI. All rights reserved.</span>
+        <span>Made for businesses that want more customers.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      function $(id) { return document.getElementById(id); }
+      function esc(s) {
+        return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+      function getJSON(k, def) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : def; } catch (e) { return def; } }
+      function setJSON(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+      function money(n) { return '$' + Number(n || 0).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }); }
+      function money2(n) { return '$' + Number(n || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+
+      function toast(msg) {
+        var t = document.createElement('div');
+        t.textContent = msg;
+        t.style.cssText = 'position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:#0f172a;color:#fff;padding:12px 20px;border-radius:999px;font-size:14px;z-index:99;box-shadow:0 10px 24px -8px rgba(15,23,42,.4);';
+        document.body.appendChild(t);
+        setTimeout(function () { if (t.parentNode) { t.parentNode.removeChild(t); } }, 2600);
+      }
+
+      /* ---------- account ---------- */
+      var user = null;
+      try { if (window.NexaAuth && NexaAuth.currentUser) { user = NexaAuth.currentUser(); } } catch (e) {}
+      if (!user) { var s = getJSON('nexaflow_session', null); user = (s && s.user) ? s.user : null; }
+      if (user) {
+        $('accName').textContent = user.name || user.email || 'Account owner';
+        $('accEmail').textContent = user.email || '—';
+        $('accMethod').textContent = (user.method === 'google' ? 'Google sign-in' : 'Email + password') + ' · demo mode';
+      } else {
+        $('accName').textContent = 'Not signed in';
+        $('accEmail').textContent = 'Sign in to manage your account and keep it in sync.';
+        $('accMethod').textContent = 'Guest';
+      }
+
+      /* ---------- profile ---------- */
+      var PROFILE_KEY = 'nexaflow_profile';
+      var profile = getJSON(PROFILE_KEY, { business: '', whatsapp: '233545886354', city: 'Accra, Ghana' });
+      $('pBusiness').value = profile.business || '';
+      $('pWhatsapp').value = profile.whatsapp || '';
+      $('pCity').value = profile.city || '';
+      $('profileSave').addEventListener('click', function () {
+        profile = {
+          business: $('pBusiness').value.replace(/^\s+|\s+$/g, ''),
+          whatsapp: $('pWhatsapp').value.replace(/^\s+|\s+$/g, ''),
+          city: $('pCity').value.replace(/^\s+|\s+$/g, '')
+        };
+        setJSON(PROFILE_KEY, profile);
+        toast('✓ Profile saved');
+      });
+
+      /* ---------- security ---------- */
+      var pin = null, fp = null;
+      try { pin = localStorage.getItem('nexaflow_pin'); fp = localStorage.getItem('nexaflow_passkey'); } catch (e) {}
+      var pEl = $('secPin'), fEl = $('secFp');
+      pEl.textContent = pin ? 'PIN: set ✓' : 'PIN: not set';
+      fEl.textContent = fp ? 'Fingerprint: enrolled ✓' : 'Fingerprint: not enrolled';
+      pEl.style.color = pin ? '#15803d' : '#b45309';
+      fEl.style.color = fp ? '#15803d' : '#b45309';
+
+      /* ---------- invite & earn ---------- */
+      function refCode() {
+        var b = ($('pBusiness').value || '').replace(/^\s+|\s+$/g, '') || 'nexaflow';
+        return b.toLowerCase().replace(/&/g, ' and ').replace(/['\u2019]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'nexaflow';
+      }
+      var refLink = $('refLink');
+      var base = 'https://nexaflowai.surge.sh/?ref=';
+      refLink.value = base + refCode();
+      $('pBusiness').addEventListener('input', function () { refLink.value = base + refCode(); });
+      $('refCopy').addEventListener('click', function () {
+        try {
+          refLink.select(); refLink.setSelectionRange(0, 99999); document.execCommand('copy');
+          toast('\u2713 Invite link copied');
+        } catch (e) { refLink.focus(); refLink.select(); toast('Press Ctrl/Cmd+C to copy'); }
+      });
+      var refMsg = 'I just found NexaFlow AI \u2014 they build websites with AI assistants & WhatsApp automation in 7 days. Use my link and we both get 10% off: ';
+      $('refWa').addEventListener('click', function (e) { e.preventDefault(); window.open('https://wa.me/?text=' + encodeURIComponent(refMsg + refLink.value), '_blank'); });
+      $('refX').addEventListener('click', function (e) { e.preventDefault(); window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(refMsg + refLink.value), '_blank'); });
+
+      /* ---------- sign out ---------- */
+      var out = $('signOutLink');
+      out.addEventListener('click', function (e) {
+        e.preventDefault();
+        try { if (window.NexaAuth && NexaAuth.signOut) { NexaAuth.signOut(); } } catch (err) {}
+        try { localStorage.removeItem('nexaflow_session'); } catch (err2) {}
+        window.location.href = 'login.html';
+      });
+
+      /* ---------- income ---------- */
+      var FEE = 0.0195; // Paystack Ghana — 1.95% flat
+
+      function seed() {
+        var names = ['Ama Osei', 'Kwame Mensah', 'Efua Boateng', 'Yaw Darko', 'Naa Adjei', 'Kojo Antwi',
+          'Abena Quaye', 'Fiifi Coleman', 'Aku Sika', 'Kofi Owusu', 'Adwoa B', 'Esi Tetteh', 'Yaa Asantewaa', 'Kweku F'];
+        var services = ['Website + AI + WhatsApp', 'Website only', 'Booking system', 'Website + AI + WhatsApp', 'Other'];
+        var pays = ['unpaid', 'deposit', 'paid', 'unpaid', 'unpaid', 'deposit', 'paid', 'unpaid', 'deposit', 'paid', 'unpaid', 'paid', 'unpaid', 'deposit'];
+        var out = [];
+        for (var i = 0; i < 14; i++) {
+          var svc = services[i % services.length];
+          var amount = 0;
+          if (pays[i] === 'deposit') { amount = 175; }
+          else if (pays[i] === 'paid') { amount = (svc.indexOf('Website + AI') === 0) ? 350 : 250; }
+          out.push({ name: names[i], phone: '', email: '', service: svc, source: 'Demo', status: 'Booked', payment: pays[i], amount: amount, ts: Date.now() - i * 86400000 });
+        }
+        return out;
+      }
+
+      var leads = getJSON('nexaflow_leads_v2', null);
+      if (!leads || !leads.length) { leads = seed(); }
+
+      var gross = 0, clients = 0, rows = '';
+      var pc = { Essential: 0, Core: 0, Growth: 0 }, pn = { Essential: 0, Core: 0, Growth: 0 };
+      for (var j = 0; j < leads.length; j++) {
+        var l = leads[j];
+        if (l.payment === 'paid' || l.payment === 'deposit') {
+          var amt = Number(l.amount) || 0;
+          gross += amt;
+          clients++;
+          var netAmt = amt * (1 - FEE);
+          var svc = (l.service || '').toLowerCase();
+          var kind = svc.indexOf('website + ai') >= 0 ? 'Core'
+            : svc.indexOf('website only') >= 0 ? 'Essential'
+            : amt >= 500 ? 'Growth'
+            : amt >= 400 ? 'Core'
+            : amt >= 200 ? 'Essential' : null;
+          if (kind) { pc[kind]++; pn[kind] += netAmt; }
+          rows += '<tr style="border-top:1px solid #eef1f6;"><td style="padding:9px 0;"><strong>' + esc(l.name) + '</strong></td>' +
+            '<td style="padding:9px 0;">' + esc(l.service || kind || '—') + '</td>' +
+            '<td style="padding:9px 0; text-align:right;">' + money(amt) + '</td>' +
+            '<td style="padding:9px 0; text-align:right; color:#16a34a; font-weight:700;">' + money2(netAmt) + '</td></tr>';
+        }
+      }
+      var fees = gross * FEE;
+      var net = gross - fees;
+
+      $('incGross').textContent = money(gross);
+      $('incFees').textContent = money(fees);
+      $('incNet').textContent = money(net);
+      $('incClients').textContent = clients;
+
+      $('planEssentialC').textContent = pc.Essential;
+      $('planEssentialN').textContent = money2(pn.Essential);
+      $('planCoreC').textContent = pc.Core;
+      $('planCoreN').textContent = money2(pn.Core);
+      $('planGrowthC').textContent = pc.Growth;
+      $('planGrowthN').textContent = money2(pn.Growth);
+
+      $('payRows').innerHTML = rows || '<tr style="border-top:1px solid #eef1f6;"><td colspan="4" style="padding:18px 0; text-align:center; color:#64748b;">No payments yet — they\u2019ll appear here automatically.</td></tr>';
+    })();
+  </script>
+</body>
+</html>

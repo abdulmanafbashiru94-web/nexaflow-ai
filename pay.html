@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pay Online — NexaFlow AI</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NexaFlow AI" />
+  <meta property="og:title" content="Pay Online — NexaFlow AI" />
+  <meta property="og:description" content="Pay securely for your NexaFlow AI website package. We accept Visa, Mastercard, American Express, Apple Pay, and mobile money from anywhere in the world." />
+  <meta property="og:image" content="https://nexaflowai.surge.sh/og.png" />
+  <meta property="og:url" content="https://nexaflowai.surge.sh/pay.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pay Online — NexaFlow AI" />
+  <meta name="twitter:description" content="Pay securely for your NexaFlow AI website package. We accept Visa, Mastercard, American Express, Apple Pay, and mobile money from anywhere in the world." />
+  <meta name="twitter:image" content="https://nexaflowai.surge.sh/og.png" />
+
+  <meta name="description" content="Pay securely for your NexaFlow AI website package. We accept Visa, Mastercard, American Express, Apple Pay, and mobile money from anywhere in the world." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Cpath d='M17.5 5 9 18h5l-1.5 9L22 14h-5z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/demos.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H10L8.5 22 17 10.5h-5.5L13 2Z" fill="#fff"/></svg>
+        </span>
+        <span>NexaFlow<span class="accent">AI</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="pay.html" class="active">Pay</a>
+        <a href="demo-chatbot.html">Demos</a>
+        <a href="ai-studio.html">AI Studio</a>
+        <a href="contact.html">Contact</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-outline" href="login.html" style="padding:10px 18px;">Sign in</a>
+        <a class="btn btn-primary" href="contact.html">Book a Free Call</a>
+        <button class="nav-toggle" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="crumbs"><a href="index.html">Home</a> / Pay Online</div>
+      <h1>Pay securely online</h1>
+      <p class="lead">Pay your deposit or full balance by card or mobile money. Secure, encrypted, and accepted from anywhere in the world.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:40px;">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- ============ LEFT: order summary ============ -->
+        <div>
+          <div class="form-card">
+            <h2 style="font-size:22px; margin-bottom:4px;">Your order</h2>
+            <p style="color:#64748b; margin-bottom:20px; font-size:14.5px;">Choose what you're paying for today.</p>
+
+            <label class="pay-option" style="display:block; border:1.5px solid #16a34a; background:#f0fdf4; border-radius:12px; padding:14px 16px; margin-bottom:10px; cursor:pointer;">
+              <input type="radio" name="amount" value="4.2" data-plan="trial" style="margin-right:10px;" />
+              <strong>3-Day Trial</strong> <span style="font-size:12px; font-weight:700; color:#16a34a; margin-left:6px;">Try it first</span>
+              <span style="display:block; font-size:13.5px; color:#64748b; margin-top:2px;">$4.20 · credited toward any package if you continue</span>
+            </label>
+
+            <label class="pay-option" style="display:block; border:1px solid #e5e9f0; border-radius:12px; padding:14px 16px; margin-bottom:10px; cursor:pointer;">
+              <input type="radio" name="amount" value="175" data-plan="deposit" checked style="margin-right:10px;" />
+              <strong>50% Deposit — Core Package</strong>
+              <span style="display:block; font-size:13.5px; color:#64748b; margin-top:2px;">$175 · starts your 7-day build</span>
+            </label>
+
+            <label class="pay-option" style="display:block; border:1px solid #e5e9f0; border-radius:12px; padding:14px 16px; margin-bottom:10px; cursor:pointer;">
+              <input type="radio" name="amount" value="350" data-plan="core" style="margin-right:10px;" />
+              <strong>Core Package — Website + AI + WhatsApp</strong>
+              <span style="display:block; font-size:13.5px; color:#64748b; margin-top:2px;">$350 · full payment</span>
+            </label>
+
+            <label class="pay-option" style="display:block; border:1px solid #e5e9f0; border-radius:12px; padding:14px 16px; margin-bottom:10px; cursor:pointer;">
+              <input type="radio" name="amount" value="250" data-plan="essential" style="margin-right:10px;" />
+              <strong>Essential Package — Website</strong>
+              <span style="display:block; font-size:13.5px; color:#64748b; margin-top:2px;">$250 · full payment</span>
+            </label>
+
+            <label class="pay-option" style="display:block; border:1px solid #e5e9f0; border-radius:12px; padding:14px 16px; margin-bottom:10px; cursor:pointer;">
+              <input type="radio" name="amount" value="400" data-plan="growth" style="margin-right:10px;" />
+              <strong>Growth Package — Scale &amp; Dominate</strong>
+              <span style="display:block; font-size:13.5px; color:#64748b; margin-top:2px;">$400 · full payment</span>
+            </label>
+
+            <div class="field" style="margin-top:14px;">
+              <label for="customAmt">Or enter a custom amount (USD)</label>
+              <input id="customAmt" type="number" min="1" placeholder="e.g. 500" />
+            </div>
+
+            <div style="background:#eef2ff; border-radius:12px; padding:14px 16px; margin-top:16px;">
+              <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                <span style="font-size:14.5px; color:#334155; font-weight:600;">Total due</span>
+                <span id="totalDisplay" style="font-size:24px; font-weight:800; color:#4f46e5;">$175</span>
+              </div>
+              <div style="font-size:12.5px; color:#64748b; margin-top:4px;">
+                Card payments are processed by our payment partner and settle to our account. You'll get a receipt by email.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ RIGHT: payment ============ -->
+        <div>
+          <div class="form-card">
+            <h2 style="font-size:22px; margin-bottom:4px;">Payment details</h2>
+            <p style="color:#64748b; margin-bottom:20px; font-size:14.5px;">Your receipt will be sent to the email below.</p>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="custName">Full name *</label>
+                <input id="custName" type="text" placeholder="Your name" />
+              </div>
+              <div class="field">
+                <label for="custEmail">Email *</label>
+                <input id="custEmail" type="email" placeholder="you@example.com" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="custPhone">Phone / WhatsApp</label>
+              <input id="custPhone" type="tel" placeholder="+233 ..." />
+            </div>
+
+            <!-- Accepted methods -->
+            <div style="display:flex; align-items:center; flex-wrap:wrap; margin-bottom:18px;">
+              <span style="font-size:13px; color:#64748b; margin-right:10px;">We accept:</span>
+              <span class="pm-badge">VISA</span>
+              <span class="pm-badge">Mastercard</span>
+              <span class="pm-badge">AMEX</span>
+              <span class="pm-badge">Apple Pay</span>
+              <span class="pm-badge">Mobile Money</span>
+            </div>
+
+            <button class="btn btn-primary btn-lg btn-block" id="payBtn" type="button">Pay Securely Now</button>
+
+            <!-- Status message area -->
+            <div id="payStatus" style="display:none; margin-top:16px; border-radius:12px; padding:14px 16px; font-size:14px;"></div>
+
+            <p class="hint" style="text-align:center; margin-top:14px;">
+              🔒 Encrypted &amp; secure — we never see or store your card details.
+            </p>
+          </div>
+
+          <div class="card" style="margin-top:16px;">
+            <h3 style="margin-bottom:8px;">Prefer to pay another way?</h3>
+            <p style="font-size:14.5px; color:#64748b; margin-bottom:14px;">We also accept direct bank transfer and mobile money. Message us and we'll send the details.</p>
+            <a class="btn btn-whatsapp" href="https://wa.me/233545886354" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.5-1.5-1.8-.1-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3z" fill="#fff"/></svg>
+              Pay via WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW YOU GET PAID ============ -->
+  <section class="section soft">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">For business owners</span>
+        <h2>How your money reaches you</h2>
+        <p class="lead">When a client pays by card, here's exactly what happens behind the scenes.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>1. Client pays by card</h3>
+          <p>Visa, Mastercard, Amex, Apple Pay, or mobile money — from any country, 24/7.</p>
+        </div>
+        <div class="card">
+          <h3>2. Payment provider settles</h3>
+          <p>Paystack settles to your Ghana bank account next-day; Flutterwave within 5 days for international cards.</p>
+        </div>
+        <div class="card">
+          <h3>3. You're paid</h3>
+          <p>Funds land directly in your bank account — no manual chasing of clients for payment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Payment FAQ</span>
+        <h2>Common questions</h2>
+      </div>
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-q">Is paying by card safe? <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="faq-a"><p>Yes. Payments are processed by Paystack or Flutterwave — both PCI-DSS compliant, with bank-level encryption. Your card details never touch our website; we only receive a payment confirmation.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What cards do you accept? <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="faq-a"><p>Visa, Mastercard, and American Express from any country, plus Apple Pay and Ghana mobile money (MTN, Telecel, AirtelTigo). International customers can pay in their own currency and their bank handles conversion.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Why is my price shown in USD but I'm in Ghana? <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="faq-a"><p>Our packages are priced in USD so the price is consistent worldwide. When you pay, the amount is converted to Ghana cedis at your bank's rate. You can also message us for a cedi price any time.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you offer refunds? <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="faq-a"><p>Deposits are refundable if we haven't started your build yet. Once work has begun, funds go toward your project. See your proposal for full terms.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can I pay in instalments? <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="faq-a"><p>Yes — our standard terms are 50% to begin and 50% on delivery. For larger projects we can arrange a custom schedule. Message us and we'll set it up.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="mark" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H10L8.5 22 17 10.5h-5.5L13 2Z" fill="#fff"/></svg>
+            </span>
+            <span>NexaFlow<span class="accent">AI</span></span>
+          </a>
+          <p class="footer-about">Turn visitors into customers — automatically. AI websites &amp; WhatsApp automation for ambitious local businesses.</p>
+          <div class="socials">
+            <a href="https://wa.me/233545886354" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.5-1.5-1.8-.1-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.3 0-1.1-.1-2-.1-2 0-3.4 1.2-3.4 3.5V11H8.6v3H11v7h2.5z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.9 8.6H3.6V20h3.3V8.6zM5.2 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM13 8.6h-3.2V20H13v-6c0-1.6.8-2.6 2.1-2.6 1.2 0 1.9.8 1.9 2.6v6h3.2v-6.8c0-3-1.6-4.8-4-4.8-1.8 0-2.6 1-3.2 1.8V8.6z"/></svg></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Services</h4>
+          <div class="footer-links">
+            <a href="services.html">Business Websites</a>
+            <a href="services.html">AI Customer Assistant</a>
+            <a href="services.html">WhatsApp Lead Capture</a>
+            <a href="services.html">Appointment Booking</a>
+            <a href="services.html">Google Maps &amp; Analytics</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <div class="footer-links">            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+            <a href="settings.html">Account &amp; income</a>
+            <a href="feedback.html">Leave a review</a>
+            <a href="pay.html">Pay online</a>
+            <a href="login.html">Sign in / Dashboard</a>
+            <a href="demo-chatbot.html">Live Demos</a>
+            <a href="ai-studio.html">AI Studio</a>
+            <a href="dashboard.html">Client Dashboard</a>
+            <a href="business-name-generator.html">Business Name Generator</a>
+            <a href="whatsapp-reply-builder.html">WhatsApp Reply Builder</a></div>
+        </div>
+
+        <div>
+          <h4>Get in touch</h4>
+          <div class="footer-contact">
+            <a href="https://wa.me/233545886354" target="_blank" rel="noopener">WhatsApp: +233 54 588 6354</a>
+            <a href="mailto:abdulmanafbashiru94@gmail.com">abdulmanafbashiru94@gmail.com</a>
+            <a href="tel:+233545886354">+233 54 588 6354</a>
+            <span>Accra, Greater Accra, Ghana</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 NexaFlow AI. All rights reserved.</span>
+        <span>Made for businesses that want more customers.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    /* ============================================================
+       NexaFlow AI — Secure checkout (ES5)
+       Supports Paystack (default) and Flutterwave via CONFIG.
+       ------------------------------------------------------------
+       TO GO LIVE (see payments-setup.md):
+       1. Create your account at paystack.com (or flutterwave.com)
+       2. Paste your PUBLIC key into CONFIG below
+       3. Set your preferred currency + USD->GHS rate
+       ============================================================ */
+    (function () {
+      'use strict';
+
+      var CONFIG = {
+        provider: 'paystack',                 // 'paystack' | 'flutterwave'
+        paystackKey: 'pk_test_98e065042afe649c1d75174f82cacb9397ee80d7', // Paystack PUBLIC key (TEST — swap for pk_live_ after verification)
+        flutterwaveKey: 'FLWPUBK_TEST-xxxxxxxxxxxx', // paste your Flutterwave PUBLIC key
+        businessName: 'NexaFlow AI',
+        yourPhone: '0545886354',
+        currency: 'GHS',                      // Paystack (GH) settles GHS. Flutterwave: use 'USD'
+        usdToGhs: 11.5,                       // approximate GHS per 1 USD — update regularly
+        paystackSdk: 'https://js.paystack.co/v1/inline.js',
+        flutterwaveSdk: 'https://checkout.flutterwave.com/v3.js'
+      };
+
+      var statusEl = document.getElementById('payStatus');
+      var payBtn = document.getElementById('payBtn');
+      var totalDisplay = document.getElementById('totalDisplay');
+      var options = document.getElementsByName('amount');
+      var custom = document.getElementById('customAmt');
+
+      function showStatus(msg, kind) {
+        statusEl.style.display = 'block';
+        statusEl.textContent = msg;
+        var ok = (kind === 'ok');
+        statusEl.style.background = ok ? '#ecfdf3' : '#fef3c7';
+        statusEl.style.color = ok ? '#15803d' : '#b45309';
+        statusEl.style.border = '1px solid ' + (ok ? '#bbf7d0' : '#fde68a');
+      }
+      function clearStatus() { statusEl.style.display = 'none'; }
+
+      function selectedAmount() {
+        var v = custom.value.replace(/^\s+|\s+$/g, '');
+        if (v) { return parseFloat(v); }
+        for (var i = 0; i < options.length; i++) {
+          if (options[i].checked) { return parseFloat(options[i].value); }
+        }
+        return 0;
+      }
+
+      /* Which package is selected — sent to the payment provider so the
+         webhook can record the right USD amount and deposit/full state. */
+      function selectedPlan() {
+        var v = custom.value.replace(/^\s+|\s+$/g, '');
+        if (v) { return 'custom'; }
+        for (var i = 0; i < options.length; i++) {
+          if (options[i].checked) { return options[i].getAttribute('data-plan') || 'custom'; }
+        }
+        return 'custom';
+      }
+
+      function updateTotal() {
+        var usd = selectedAmount();
+        if (isNaN(usd) || usd <= 0) { usd = 0; }
+        totalDisplay.textContent = '$' + usd.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
+
+      for (var o = 0; o < options.length; o++) {
+        options[o].addEventListener('change', function () {
+          custom.value = '';
+          updateTotal();
+        });
+      }
+      custom.addEventListener('input', updateTotal);
+      // Preselect a custom amount from the URL, e.g. pay.html?amount=4.2
+      var am = /[?&]amount=([0-9.]+)/.exec(window.location.search);
+      if (am) { custom.value = am[1]; }
+
+      function nameOrEmailValid() {
+        var name = document.getElementById('custName').value.replace(/^\s+|\s+$/g, '');
+        var email = document.getElementById('custEmail').value.replace(/^\s+|\s+$/g, '');
+        if (!name) { showStatus('Please enter your full name.', 'warn'); return false; }
+        if (!email || email.indexOf('@') === -1) { showStatus('Please enter a valid email for your receipt.', 'warn'); return false; }
+        return true;
+      }
+
+      function keyMissing() {
+        return CONFIG.provider === 'paystack'
+          ? CONFIG.paystackKey.indexOf('xxxx') !== -1
+          : CONFIG.flutterwaveKey.indexOf('xxxx') !== -1;
+      }
+
+      function ref() {
+        return 'NXF-' + new Date().getTime() + '-' + Math.floor(Math.random() * 900 + 100);
+      }
+
+      function payWithPaystack(usdAmount) {
+        var email = document.getElementById('custEmail').value.replace(/^\s+|\s+$/g, '');
+        var name = document.getElementById('custName').value.replace(/^\s+|\s+$/g, '');
+        var phone = document.getElementById('custPhone').value.replace(/^\s+|\s+$/g, '');
+        if (!email) {
+          showStatus('Please enter your email \u2014 we need it to send your receipt and match your payment to your project.', 'warn');
+          return;
+        }
+        // Paystack expects the smallest unit. For GHS: cedis * 100 (pesewas).
+        var ghs = Math.round(usdAmount * CONFIG.usdToGhs);
+        var amount = ghs * 100;
+
+        var handler = window.PaystackPop.setup({
+          key: CONFIG.paystackKey,
+          email: email,
+          amount: amount,
+          currency: CONFIG.currency,
+          ref: ref(),
+          metadata: {
+            lead_email: email,
+            lead_name: name,
+            lead_phone: phone,
+            usd_amount: usdAmount,
+            plan: selectedPlan(),
+            custom_fields: [
+              { display_name: 'Name', variable_name: 'name', value: name },
+              { display_name: 'Phone', variable_name: 'phone', value: phone },
+              { display_name: 'Package', variable_name: 'package', value: '$' + usdAmount }
+            ]
+          },
+          callback: function (response) {
+            showStatus('Thank you! Your payment reference is ' + response.reference + '. We\u2019ll email your receipt and start right away.', 'ok');
+          },
+          onClose: function () {
+            showStatus('You closed the payment window. No charge was made — try again whenever you\u2019re ready.', 'warn');
+          }
+        });
+        handler.openIframe();
+      }
+
+      function payWithFlutterwave(usdAmount) {
+        var email = document.getElementById('custEmail').value.replace(/^\s+|\s+$/g, '');
+        var name = document.getElementById('custName').value.replace(/^\s+|\s+$/g, '');
+        var phone = document.getElementById('custPhone').value.replace(/^\s+|\s+$/g, '');
+
+        window.FlutterwaveCheckout({
+          public_key: CONFIG.flutterwaveKey,
+          tx_ref: ref(),
+          amount: usdAmount,
+          currency: CONFIG.currency,
+          payment_options: 'card,mobilemoneygh',
+          customer: { email: email, name: name, phone_number: phone },
+          customizations: {
+            title: CONFIG.businessName,
+            description: 'Website package — $' + usdAmount,
+            logo: ''
+          },
+          callback: function (data) {
+            if (data.status === 'successful') {
+              showStatus('Thank you! Payment successful — transaction ' + data.transaction_id + '. We\u2019ll email your receipt.', 'ok');
+            } else {
+              showStatus('Your payment is being confirmed. We\u2019ll email you once it clears.', 'warn');
+            }
+          },
+          onclose: function () {
+            showStatus('You closed the payment window. No charge was made — try again whenever you\u2019re ready.', 'warn');
+          }
+        });
+      }
+
+      function loadSdk(url, onOk, onFail) {
+        var s = document.createElement('script');
+        s.src = url;
+        s.onload = onOk;
+        s.onerror = onFail;
+        document.body.appendChild(s);
+      }
+
+      payBtn.addEventListener('click', function () {
+        clearStatus();
+        var usd = selectedAmount();
+        if (isNaN(usd) || usd <= 0) { showStatus('Please choose a package or enter an amount.', 'warn'); return; }
+        if (!nameOrEmailValid()) { return; }
+
+        if (keyMissing()) {
+          showStatus('This checkout isn\u2019t connected to a payment account yet. Open payments-setup.md in your project folder, paste your public key into CONFIG in pay.html, and you\u2019re live. For now, message us on WhatsApp to pay.', 'warn');
+          return;
+        }
+
+        showStatus('Opening secure payment…', 'warn');
+
+        if (CONFIG.provider === 'flutterwave') {
+          if (window.FlutterwaveCheckout) { payWithFlutterwave(usd); }
+          else { loadSdk(CONFIG.flutterwaveSdk, function () { payWithFlutterwave(usd); }, function () { showStatus('Couldn\u2019t load the payment provider. Please check your connection or pay via WhatsApp.', 'warn'); }); }
+        } else {
+          if (window.PaystackPop) { payWithPaystack(usd); }
+          else { loadSdk(CONFIG.paystackSdk, function () { payWithPaystack(usd); }, function () { showStatus('Couldn\u2019t load the payment provider. Please check your connection or pay via WhatsApp.', 'warn'); }); }
+        }
+      });
+
+      updateTotal();
+    })();
+  </script>
+
+  <style>
+    /* Small payment-page helpers (hardcoded, compatible) */
+    .pm-badge {
+      display: inline-block;
+      background: #f1f5f9;
+      border: 1px solid #e5e9f0;
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #334155;
+      margin: 0 6px 6px 0;
+      letter-spacing: 0.02em;
+    }
+    .pay-option input[type="radio"] { accent-color: #4f46e5; }
+  </style>
+</body>
+</html>

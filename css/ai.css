@@ -1,0 +1,145 @@
+/* ============================================================
+   NexaFlow AI — AI Delivery Studio styles (max compatibility)
+   Loaded after styles.css. No Grid, no custom properties, no clamp.
+   ============================================================ */
+
+.ai-grid { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; }
+.ai-grid .ai-side { width: 34%; }
+.ai-grid .ai-main { width: 62%; }
+
+.ai-steps { display: flex; flex-wrap: wrap; margin-bottom: 28px; }
+.ai-step {
+  display: inline-flex; align-items: center;
+  font-size: 13.5px; font-weight: 700; color: #64748b;
+  margin: 0 24px 10px 0;
+}
+.ai-step .n {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: #eef2ff; color: #4f46e5;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 13px; margin-right: 8px; flex: 0 0 auto;
+}
+.ai-step.done .n { background: #16a34a; color: #ffffff; }
+.ai-step.done { color: #16a34a; }
+
+/* Tabs */
+.ai-tabs { display: flex; flex-wrap: wrap; border-bottom: 1px solid #e5e9f0; margin-bottom: 22px; }
+.ai-tab {
+  padding: 11px 16px; font-size: 14.5px; font-weight: 700; color: #64748b;
+  border-bottom: 2px solid transparent; margin-right: 4px; cursor: pointer;
+  background: none;
+}
+.ai-tab:hover { color: #0f172a; }
+.ai-tab.active { color: #4f46e5; border-bottom-color: #4f46e5; }
+
+.ai-panel { display: none; }
+.ai-panel.active { display: block; }
+
+/* Output cards */
+.ai-block {
+  background: #ffffff; border: 1px solid #e5e9f0; border-radius: 14px;
+  padding: 20px 22px; margin-bottom: 16px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+.ai-block h4 {
+  font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+  color: #4f46e5; font-weight: 800; margin-bottom: 10px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.ai-block .copy {
+  font-size: 12px; font-weight: 700; color: #4f46e5; cursor: pointer;
+  background: #eef2ff; border-radius: 999px; padding: 4px 12px;
+  text-transform: none; letter-spacing: 0;
+}
+.ai-block .copy:hover { background: #e0e7ff; }
+.ai-block p { font-size: 14.5px; color: #334155; white-space: pre-wrap; }
+
+/* Generated website preview */
+.ai-preview-frame {
+  width: 100%; height: 460px; border: 1px solid #e5e9f0; border-radius: 14px;
+  background: #ffffff; overflow: hidden;
+}
+
+/* Q&A list */
+.ai-qa { margin: 0; }
+.ai-qa li { margin-bottom: 12px; }
+.ai-qa .q { font-weight: 700; font-size: 14.5px; color: #0f172a; }
+.ai-qa .a { font-size: 14.5px; color: #5b6779; margin-top: 3px; }
+
+/* Action bar */
+.ai-actions { display: flex; flex-wrap: wrap; margin-top: 8px; }
+.ai-actions .btn { margin: 0 10px 10px 0; }
+
+/* Client picker */
+.ai-clients { margin-bottom: 14px; }
+.ai-clients select {
+  width: 100%; padding: 12px 14px; border: 1px solid #e5e9f0; border-radius: 10px;
+  font: inherit; font-size: 14.5px; color: #0f172a; background: #ffffff;
+}
+.ai-clients select:focus { outline: none; border-color: #4f46e5; }
+
+.ai-hint { font-size: 13px; color: #64748b; margin-top: 8px; }
+.ai-hint code { background: #f1f5f9; border-radius: 5px; padding: 1px 6px; font-size: 12.5px; }
+
+/* empty state */
+.ai-empty {
+  text-align: center; padding: 60px 20px; color: #64748b;
+  border: 1px dashed #cbd5e1; border-radius: 16px; background: #fbfcff;
+}
+.ai-empty .big { font-size: 44px; margin-bottom: 10px; }
+
+@media (max-width: 900px) {
+  .ai-grid .ai-side, .ai-grid .ai-main { width: 100%; }
+  .ai-grid .ai-main { margin-top: 36px; }
+  .ai-preview-frame { height: 380px; }
+}
+
+/* ---- Product-photo picker (client gallery uploads) ---- */
+.ph-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 12px -5px 0;
+}
+.ph-item {
+  position: relative;
+  width: 104px;
+  margin: 5px;
+  border: 1px solid #e5e9f0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+.ph-item img {
+  width: 104px;
+  height: 84px;
+  display: block;
+  background: #0b0d12;
+  border: 0;
+}
+.ph-item input {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #eef1f6;
+  border-radius: 0;
+  padding: 6px 7px;
+  font-family: inherit;
+  font-size: 11.5px;
+  margin: 0;
+  background: #fff;
+}
+.ph-x {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 22px;
+  height: 22px;
+  line-height: 20px;
+  text-align: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, .72);
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+}

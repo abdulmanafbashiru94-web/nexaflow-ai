@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create account — NexaFlow AI</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NexaFlow AI" />
+  <meta property="og:title" content="Create account — NexaFlow AI" />
+  <meta property="og:description" content="Create your NexaFlow AI account to access your dashboard, leads, and payments." />
+  <meta property="og:image" content="https://nexaflowai.surge.sh/og.png" />
+  <meta property="og:url" content="https://nexaflowai.surge.sh/signup.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Create account — NexaFlow AI" />
+  <meta name="twitter:description" content="Create your NexaFlow AI account to access your dashboard, leads, and payments." />
+  <meta name="twitter:image" content="https://nexaflowai.surge.sh/og.png" />
+
+  <meta name="description" content="Create your NexaFlow AI account to access your dashboard, leads, and payments." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Cpath d='M17.5 5 9 18h5l-1.5 9L22 14h-5z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body class="auth-page">
+
+  <div id="betaBar" role="banner" style="background:#4f46e5;background:linear-gradient(90deg,#4f46e5,#7c3aed);color:#fff;font-size:13.5px;line-height:1.55;padding:9px 44px 9px 16px;text-align:center;position:relative;">
+    <strong>🚧 Public beta</strong> — everything is free to try right now.
+    Found a problem? <a href="feedback.html" style="color:#fff;font-weight:700;text-decoration:underline;">Report a problem</a>.
+    Early testers: mention <strong>BETA</strong> when you book for a launch discount.
+    <button type="button" aria-label="Dismiss banner" onclick="document.getElementById('betaBar').style.display='none'" style="position:absolute;right:12px;top:9px;background:rgba(255,255,255,.22);border:0;color:#fff;border-radius:50%;width:22px;height:22px;cursor:pointer;font-size:13px;line-height:1;padding:0;">✕</button>
+  </div>
+
+  <header class="auth-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <span class="mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H10L8.5 22 17 10.5h-5.5L13 2Z" fill="#fff"/></svg>
+        </span>
+        <span>NexaFlow<span class="accent">AI</span></span>
+      </a>
+    </div>
+  </header>
+
+  <main class="auth-wrap">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <span class="mark">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H10L8.5 22 17 10.5h-5.5L13 2Z" fill="#fff"/></svg>
+        </span>
+      </div>
+      <h1 class="auth-title">Create your account</h1>
+      <p class="auth-sub">Set up access to your NexaFlow AI dashboard</p>
+
+      <!-- Connection status -->
+      <div class="auth-status" id="authStatus" style="display:none;"></div>
+
+      <!-- Demo mode notice (only visible when Firebase is off) -->
+      <div class="demo-banner" id="demoBanner">
+        🚧 <strong>Demo mode.</strong> Accounts are stored only in this browser so you can try the app right now.
+        Paste your keys into <code>firebase-config.js</code> to switch to real accounts — see <code>firebase-setup.md</code>.
+      </div>
+
+      <div class="form-msg" id="formMsg"></div>
+
+      <form id="signupForm" novalidate>
+        <div class="field">
+          <label for="suName">Full name</label>
+          <input id="suName" type="text" placeholder="Your name" autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="suEmail">Email</label>
+          <input id="suEmail" type="email" placeholder="you@example.com" autocomplete="email" />
+        </div>
+        <div class="field field-rel">
+          <label for="suPassword">Password</label>
+          <input id="suPassword" type="password" placeholder="At least 6 characters" autocomplete="new-password" />
+          <button class="pw-toggle" type="button" data-for="suPassword">Show</button>
+          <div class="strength"><div class="strength-bar" id="strengthBar"></div></div>
+          <div class="strength-label" id="strengthLabel">Use 8+ characters with a mix of letters &amp; numbers</div>
+        </div>
+        <div class="field field-rel">
+          <label for="suConfirm">Confirm password</label>
+          <input id="suConfirm" type="password" placeholder="Repeat password" autocomplete="new-password" />
+          <button class="pw-toggle" type="button" data-for="suConfirm">Show</button>
+        </div>
+        <button class="btn btn-primary btn-lg btn-block" id="suSubmit" type="submit">Create account</button>
+      </form>
+
+      <p class="hint" style="text-align:center; margin-top:12px;">By creating an account you agree to keep your login secure.</p>
+
+      <div class="divider">or</div>
+
+      <button class="btn-google" id="googleBtn" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.1A6.94 6.94 0 0 1 5.47 12c0-.73.13-1.44.37-2.1V7.06H2.18A11.02 11.02 0 0 0 1 12c0 1.77.43 3.45 1.18 4.94l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+        Sign up with Google
+      </button>
+
+      <p style="text-align:center; margin-top:18px; font-size:14px; color:#64748b;">
+        Already have an account? <a class="btn-ghost" href="login.html">Sign in →</a>
+      </p>
+
+      <p class="hint" style="text-align:center; margin-top:16px;">
+        🔒 Your fingerprint never leaves your device · PINs are stored as hashes · <a class="btn-ghost" href="index.html">← Back to site</a>
+      </p>
+    </div>
+  </main>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    if (window.NexaAuth) { NexaAuth.initSignupPage(); }
+  </script>
+
+  <footer style="text-align:center; padding:30px 18px 40px; color:#94a3b8; font-size:14px; line-height:2.2;">
+    <div>
+      <a href="index.html" style="color:#475569; text-decoration:none; margin:0 10px; white-space:nowrap;">Home</a>
+      <a href="services.html" style="color:#475569; text-decoration:none; margin:0 10px; white-space:nowrap;">Services</a>
+      <a href="pricing.html" style="color:#475569; text-decoration:none; margin:0 10px; white-space:nowrap;">Pricing</a>
+      <a href="pay.html" style="color:#475569; text-decoration:none; margin:0 10px; white-space:nowrap;">Pay</a>
+      <a href="demo-chatbot.html" style="color:#475569; text-decoration:none; margin:0 10px; white-space:nowrap;">Demos</a>
+      <a href="ai-studio.html" style="color:#475569; text-decoration:none; margin:0 10px; white-space:nowrap;">AI Studio</a>
+      <a href="contact.html" style="color:#475569; text-decoration:none; margin:0 10px; white-space:nowrap;">Contact</a>
+      <a href="feedback.html" style="color:#475569; text-decoration:none; margin:0 10px; white-space:nowrap;">Feedback</a>
+      <a href="dashboard.html" style="color:#475569; text-decoration:none; margin:0 10px; white-space:nowrap;">Dashboard</a>
+      <a href="settings.html" style="color:#475569; text-decoration:none; margin:0 10px; white-space:nowrap;">Settings</a>
+      <a href="business-name-generator.html" style="color:#475569; text-decoration:none; margin:0 10px; white-space:nowrap;">Name Generator</a>
+      <a href="whatsapp-reply-builder.html" style="color:#475569; text-decoration:none; margin:0 10px; white-space:nowrap;">WhatsApp Replies</a>
+      <a href="login.html" style="color:#4f46e5; text-decoration:none; margin:0 10px; white-space:nowrap; font-weight:600;">Sign in</a>
+    </div>
+    <div style="margin-top:4px;">© 2026 NexaFlow AI · Accra, Greater Accra, Ghana</div>
+  </footer>
+</body>
+</html>

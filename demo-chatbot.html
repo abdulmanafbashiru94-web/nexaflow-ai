@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Chatbot Demo — NexaFlow AI</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NexaFlow AI" />
+  <meta property="og:title" content="AI Chatbot Demo — NexaFlow AI" />
+  <meta property="og:description" content="Try a live demo of the NexaFlow AI customer assistant — the chatbot that answers questions, captures leads, and books appointments 24/7." />
+  <meta property="og:image" content="https://nexaflowai.surge.sh/og.png" />
+  <meta property="og:url" content="https://nexaflowai.surge.sh/demo-chatbot.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Chatbot Demo — NexaFlow AI" />
+  <meta name="twitter:description" content="Try a live demo of the NexaFlow AI customer assistant — the chatbot that answers questions, captures leads, and books appointments 24/7." />
+  <meta name="twitter:image" content="https://nexaflowai.surge.sh/og.png" />
+
+  <meta name="description" content="Try a live demo of the NexaFlow AI customer assistant — the chatbot that answers questions, captures leads, and books appointments 24/7." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Cpath d='M17.5 5 9 18h5l-1.5 9L22 14h-5z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/demos.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H10L8.5 22 17 10.5h-5.5L13 2Z" fill="#fff"/></svg>
+        </span>
+        <span>NexaFlow<span class="accent">AI</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="pay.html">Pay</a>
+        <a href="demo-chatbot.html" class="active">Demos</a>
+        <a href="ai-studio.html">AI Studio</a>
+        <a href="contact.html">Contact</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-outline" href="login.html" style="padding:10px 18px;">Sign in</a>
+        <a class="btn btn-primary" href="contact.html">Book a Free Call</a>
+        <button class="nav-toggle" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="crumbs"><a href="index.html">Home</a> / Demos / AI Chatbot</div>
+      <span style="display:inline-block; background:#ecfdf5; color:#047857; border:1px solid #a7f3d0; border-radius:999px; padding:5px 14px; font-size:12.5px; font-weight:700; letter-spacing:0.02em; margin-bottom:10px;">✓ FREE DEMO — NO SIGN-UP NEEDED</span>
+      <h1>Try the assistant your customers will talk to</h1>
+      <p class="lead">This is a live demo of the AI we train for your business. Ask it anything — pricing, services, delivery time, booking.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:40px;">
+    <div class="container">
+      <div class="demo-tabs">
+        <a href="demo-chatbot.html" class="active">AI Chatbot Demo</a>
+        <a href="demo-whatsapp.html">WhatsApp Lead Flow</a>
+        <a href="dashboard.html">Client Dashboard</a>
+        <a href="ai-studio.html">AI Delivery Studio</a>
+      </div>
+
+      <div class="demo-split">
+        <!-- Chat window -->
+        <div class="main">
+          <div class="chat-window">
+            <div class="cw-head">
+              <div class="cw-ava">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M12 19v2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M3 12h2M19 12h2M5.2 18.8l1.4-1.4M17.4 6.6l1.4-1.4"/><circle cx="12" cy="12" r="3.5"/></svg>
+              </div>
+              <div>
+                <div class="cw-name">Nexa AI Assistant</div>
+                <div class="cw-status"><span class="dot"></span> Online — replies instantly</div>
+              </div>
+            </div>
+            <div class="cw-body" id="cwBody"></div>
+            <div class="cw-chips" id="cwChips"></div>
+            <div class="cw-inputbar">
+              <input id="cwInput" type="text" placeholder="Ask me anything…" autocomplete="off" />
+              <button class="send" id="cwSend" aria-label="Send">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 14-7-4 14-3-6-7-1z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Side info -->
+        <div class="side">
+          <h2 style="font-size:24px; margin-bottom:12px;">What it does</h2>
+          <ul class="check-list">
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Answers FAQs instantly, 24/7 — even at 2 AM</li>
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Trained on your services, prices &amp; hours</li>
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Captures names &amp; numbers as leads</li>
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Hands complex questions to you on WhatsApp</li>
+          </ul>
+
+          <div class="card" style="margin-top:20px;">
+            <h3 style="margin-bottom:10px;">Try asking…</h3>
+            <ul class="q-list">
+              <li><button type="button" class="chip" onclick="askQuick(this)">How much does it cost?</button></li>
+              <li><button type="button" class="chip" onclick="askQuick(this)">What do you build?</button></li>
+              <li><button type="button" class="chip" onclick="askQuick(this)">How fast is delivery?</button></li>
+              <li><button type="button" class="chip" onclick="askQuick(this)">Book a free call</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">How it works</span>
+        <h2>An assistant that never sleeps</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>1. We train it on you</h3>
+          <p>We load your services, prices, opening hours, FAQs, and booking rules into the assistant.</p>
+        </div>
+        <div class="card">
+          <h3>2. It answers everyone</h3>
+          <p>Every visitor gets an instant, friendly answer — no more missed calls or slow replies.</p>
+        </div>
+        <div class="card">
+          <h3>3. You get the leads</h3>
+          <p>Qualified enquiries land in your WhatsApp, email, and dashboard. You just close the sale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <h2>Want this on your website?</h2>
+        <p>Book a free call and we'll show you exactly what your AI assistant would say — trained on your real business.</p>
+        <div class="ctas">
+          <a class="btn btn-white btn-lg" href="contact.html">Book a Free Call</a>
+          <a class="btn btn-line btn-lg" href="https://wa.me/233545886354" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="mark" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H10L8.5 22 17 10.5h-5.5L13 2Z" fill="#fff"/></svg>
+            </span>
+            <span>NexaFlow<span class="accent">AI</span></span>
+          </a>
+          <p class="footer-about">Turn visitors into customers — automatically. AI websites &amp; WhatsApp automation for ambitious local businesses.</p>
+          <div class="socials">
+            <a href="https://wa.me/233545886354" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.5-1.5-1.8-.1-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.3 0-1.1-.1-2-.1-2 0-3.4 1.2-3.4 3.5V11H8.6v3H11v7h2.5z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.9 8.6H3.6V20h3.3V8.6zM5.2 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM13 8.6h-3.2V20H13v-6c0-1.6.8-2.6 2.1-2.6 1.2 0 1.9.8 1.9 2.6v6h3.2v-6.8c0-3-1.6-4.8-4-4.8-1.8 0-2.6 1-3.2 1.8V8.6z"/></svg></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Services</h4>
+          <div class="footer-links">
+            <a href="services.html">Business Websites</a>
+            <a href="services.html">AI Customer Assistant</a>
+            <a href="services.html">WhatsApp Lead Capture</a>
+            <a href="services.html">Appointment Booking</a>
+            <a href="services.html">Google Maps &amp; Analytics</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <div class="footer-links">            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+            <a href="settings.html">Account &amp; income</a>
+            <a href="feedback.html">Leave a review</a>
+            <a href="pay.html">Pay online</a>
+            <a href="login.html">Sign in / Dashboard</a>
+            <a href="demo-chatbot.html">Live Demos</a>
+            <a href="ai-studio.html">AI Studio</a>
+            <a href="dashboard.html">Client Dashboard</a>
+            <a href="business-name-generator.html">Business Name Generator</a>
+            <a href="whatsapp-reply-builder.html">WhatsApp Reply Builder</a></div>
+        </div>
+
+        <div>
+          <h4>Get in touch</h4>
+          <div class="footer-contact">
+            <a href="https://wa.me/233545886354" target="_blank" rel="noopener">WhatsApp: +233 54 588 6354</a>
+            <a href="mailto:abdulmanafbashiru94@gmail.com">abdulmanafbashiru94@gmail.com</a>
+            <a href="tel:+233545886354">+233 54 588 6354</a>
+            <span>Accra, Greater Accra, Ghana</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 NexaFlow AI. All rights reserved.</span>
+        <span>Made for businesses that want more customers.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    /* ================= AI Chatbot demo (ES5) ================= */
+    (function () {
+      'use strict';
+      var body = document.getElementById('cwBody');
+      var input = document.getElementById('cwInput');
+      var send = document.getElementById('cwSend');
+      var chips = document.getElementById('cwChips');
+      var WA = 'https://wa.me/233545886354';
+
+      var waSvg = '<svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.5-1.5-1.8-.1-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3z"/></svg>';
+
+      function scrollDown() { body.scrollTop = body.scrollHeight; }
+
+      function addMsg(text, who) {
+        var d = document.createElement('div');
+        d.className = 'cw-msg ' + (who === 'user' ? 'cw-user' : 'cw-bot');
+        d.textContent = text;
+        body.appendChild(d);
+        scrollDown();
+        return d;
+      }
+
+      function addWa(text) {
+        var a = document.createElement('a');
+        a.className = 'cw-wa';
+        a.href = WA;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.innerHTML = waSvg + '<span>' + text + '</span>';
+        body.appendChild(a);
+        scrollDown();
+      }
+
+      function typing(cb) {
+        var t = document.createElement('div');
+        t.className = 'cw-typing';
+        t.innerHTML = '<span></span><span></span><span></span>';
+        body.appendChild(t);
+        scrollDown();
+        setTimeout(function () { t.remove(); cb(); }, 700);
+      }
+
+      function setChips(list) {
+        chips.innerHTML = '';
+        for (var i = 0; i < list.length; i++) {
+          (function (label) {
+            var c = document.createElement('button');
+            c.type = 'button';
+            c.className = 'chip';
+            c.textContent = label;
+            c.addEventListener('click', function () { sendText(label); });
+            chips.appendChild(c);
+          })(list[i]);
+        }
+      }
+
+      function respond(t) {
+        var s = t.toLowerCase();
+        if (/^(hi|hello|hey|good (morning|afternoon|evening))/i.test(t)) {
+          return { text: 'Hello! 😊 Great to have you here. What would you like to know?', chips: ['How much does it cost?', 'What do you build?', 'How fast is delivery?'] };
+        }
+        if (/(price|pricing|cost|how much|fee|charge|budget)/.test(s)) {
+          return { text: 'Our most popular Core package is $350 one-time — a professional website, AI assistant, WhatsApp lead capture, booking system, Google Maps, and analytics. Delivered in 7 days.', chips: ['What does Core include?', 'Book a free call'] };
+        }
+        if (/(core|include|package)/.test(s)) {
+          return { text: 'Core includes: 1️⃣ professional website 2️⃣ AI assistant 3️⃣ WhatsApp lead capture 4️⃣ booking system 5️⃣ lead forms 6️⃣ Google Maps + analytics. Plus 30 days free support.', chips: ['How much does it cost?', 'Book a free call'] };
+        }
+        if (/(what do you|services|build|offer|website|sites)/.test(s)) {
+          return { text: 'We build: 1️⃣ professional websites 2️⃣ AI customer assistants 3️⃣ WhatsApp lead capture 4️⃣ appointment booking 5️⃣ lead forms 6️⃣ Google Maps + analytics. Which one interests you most?', chips: ['Tell me about the AI assistant', 'How much does it cost?'] };
+        }
+        if (/(ai|chatbot|assistant|bot|answer|automate)/.test(s)) {
+          return { text: 'Our AI assistant is trained on your services, prices, and hours. It answers customers instantly 24/7, qualifies leads, and hands anything complex to you on WhatsApp — so you never lose a customer.', chips: ['How much does it cost?', 'Book a free call'] };
+        }
+        if (/(how fast|delivery|how long|timeline|days|deadline|when|speed)/.test(s)) {
+          return { text: '7 days from kickoff for our Core package — idea to launch. We handle design, build, and setup; you just approve along the way. 🚀', chips: ['How much does it cost?', 'Book a free call'] };
+        }
+        if (/(book|appointment|call|talk|human|someone|meeting|demo|speak)/.test(s)) {
+          return { text: 'I\u2019d love to set that up! Tap below and we\u2019ll find a time that works — or message us directly on WhatsApp.', wa: true };
+        }
+        if (/(whatsapp|whats app|wa\.me|chat|message)/.test(s)) {
+          return { text: 'Yes! Every site includes WhatsApp lead capture — visitors reach you in one tap, and leads land straight on your phone.', wa: true };
+        }
+        if (/(where|location|area|accra|ghana|based|country)/.test(s)) {
+          return { text: 'We\u2019re based in Accra, Ghana 🇬🇭 and serve clients worldwide — everything is done remotely.', chips: ['How much does it cost?', 'Book a free call'] };
+        }
+        if (/(pay|payment|deposit|installment|terms)/.test(s)) {
+          return { text: 'Simple terms: 50% to start, 50% on delivery. You own everything — no lock-in contracts.', chips: ['Book a free call'] };
+        }
+        if (/(thank|thanks|appreciate|great|awesome|nice)/.test(s)) {
+          return { text: 'You\u2019re welcome! 😊 Anything else I can help with?', chips: ['Book a free call'] };
+        }
+        return { text: 'Good question! I can help with pricing, services, delivery time, and bookings. Or tap below to speak with a human on WhatsApp. 👇', wa: true, chips: ['How much does it cost?', 'What do you build?'] };
+      }
+
+      function sendText(text) {
+        addMsg(text, 'user');
+        typing(function () {
+          var r = respond(text);
+          addMsg(r.text, 'bot');
+          if (r.wa) { addWa('Continue on WhatsApp'); }
+          if (r.chips) { setChips(r.chips); }
+        });
+        input.value = '';
+      }
+
+      window.askQuick = function (el) { sendText(el.textContent); };
+
+      send.addEventListener('click', function () {
+        var v = input.value.replace(/^\s+|\s+$/g, '');
+        if (v) { sendText(v); }
+      });
+      input.addEventListener('keydown', function (e) {
+        if (e.keyCode === 13) {
+          var v = input.value.replace(/^\s+|\s+$/g, '');
+          if (v) { sendText(v); }
+        }
+      });
+
+      setTimeout(function () {
+        addMsg('Hi there! 👋 I\u2019m the Nexa AI assistant. Ask me about pricing, services, delivery time, or booking a free call.', 'bot');
+        setChips(['How much does it cost?', 'What do you build?', 'How fast is delivery?', 'Book a free call']);
+      }, 400);
+    })();
+  </script>
+</body>
+</html>

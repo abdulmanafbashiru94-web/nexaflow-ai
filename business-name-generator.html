@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Business Name Generator — NexaFlow AI</title>
+  <meta name="description" content="Generate catchy business name ideas with matching .com domains in seconds — then build a free website with an AI assistant from that name. Free tool." />
+  <meta name="keywords" content="business name generator, business name ideas, domain name generator, free website builder, AI website, Ghana, Nigeria, small business" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Cpath d='M17.5 5 9 18h5l-1.5 9L22 14h-5z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/demos.css" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NexaFlow AI" />
+  <meta property="og:title" content="Free Business Name Generator — NexaFlow AI" />
+  <meta property="og:description" content="Name ideas + matching domains in seconds — then build the website free." />
+  <meta property="og:image" content="https://nexaflowai.surge.sh/og.png" />
+  <meta property="og:url" content="https://nexaflowai.surge.sh/business-name-generator.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Business Name Generator — NexaFlow AI" />
+  <meta name="twitter:description" content="Name ideas + matching domains in seconds — then build the website free." />
+  <meta name="twitter:image" content="https://nexaflowai.surge.sh/og.png" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H10L8.5 22 17 10.5h-5.5L13 2Z" fill="#fff"/></svg>
+        </span>
+        <span>NexaFlow<span class="accent">AI</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="pay.html">Pay</a>
+        <a href="demo-chatbot.html">Demos</a>
+        <a href="ai-studio.html">AI Studio</a>
+        <a href="contact.html">Contact</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-outline" href="login.html" style="padding:10px 18px;">Sign in</a>
+        <a class="btn btn-primary" href="contact.html">Book a Free Call</a>
+        <button class="nav-toggle" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="crumbs"><a href="index.html">Home</a> / Business Name Generator</div>
+      <span style="display:inline-block; background:#ecfdf5; color:#047857; border:1px solid #a7f3d0; border-radius:999px; padding:5px 14px; font-size:12.5px; font-weight:700; letter-spacing:0.02em; margin-bottom:10px;">✓ FREE TOOL — NO SIGN-UP</span>
+      <h1>Business name ideas, in seconds</h1>
+      <p class="lead">Get catchy name ideas with a matching <strong>.com domain</strong> — then build the website for that name in 30 seconds, free.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:40px;">
+    <div class="container">
+      <div class="form-card" style="max-width:760px; margin:0 auto; padding:28px;">
+        <div class="form-row">
+          <div class="field">
+            <label for="genType">What kind of business?</label>
+            <select id="genType">
+              <option value="salon">Salon &amp; Beauty</option>
+              <option value="restaurant">Restaurant / Food</option>
+              <option value="fashion">Fashion / Clothing</option>
+              <option value="gym">Gym / Fitness</option>
+              <option value="clinic">Clinic / Health</option>
+              <option value="realestate">Real Estate</option>
+              <option value="school">School / Academy</option>
+              <option value="hotel">Hotel / Guesthouse</option>
+              <option value="auto">Auto / Car Care</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="genWord">A word you like (optional)</label>
+            <input id="genWord" type="text" placeholder="e.g. Gold, Zara, Fresh" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="genCity">City / area (for the domain)</label>
+          <input id="genCity" type="text" placeholder="Accra, Lagos, Nairobi…" />
+        </div>
+        <button class="btn btn-primary btn-lg btn-block" id="genBtn" type="button">✨ Generate names</button>
+        <p class="hint" style="margin-top:12px; font-size:12.5px;">Tap any name to build a website for it — free, in 30 seconds.</p>
+      </div>
+
+      <div id="nameResults" style="display:none; margin-top:30px;"></div>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="container" style="max-width:760px;">
+      <h2 style="font-size:24px; margin-bottom:16px;">What makes a great business name?</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:8px;">
+        <div class="form-card" style="flex:1 1 220px; padding:20px;">
+          <h3 style="font-size:16px; margin-bottom:8px;">1. Easy to say &amp; spell</h3>
+          <p style="font-size:14px; color:#5b6779;">If someone can't spell it from hearing it once, they can't Google it. Short wins.</p>
+        </div>
+        <div class="form-card" style="flex:1 1 220px; padding:20px;">
+          <h3 style="font-size:16px; margin-bottom:8px;">2. A clean .com</h3>
+          <p style="font-size:14px; color:#5b6779;">A matching .com domain makes you look established and easy to remember.</p>
+        </div>
+        <div class="form-card" style="flex:1 1 220px; padding:20px;">
+          <h3 style="font-size:16px; margin-bottom:8px;">3. Room to grow</h3>
+          <p style="font-size:14px; color:#5b6779;">Avoid names tied to one product — "Accra Cakes" can't sell furniture later.</p>
+        </div>
+      </div>
+
+      <h2 style="font-size:24px; margin:34px 0 8px;">Frequently asked</h2>
+      <details class="faq-item" style="border:1px solid #e5e9f0; border-radius:12px; background:#fff; margin-bottom:12px; overflow:hidden;">
+        <summary style="padding:16px 20px; font-weight:700; cursor:pointer;">Is this really free?</summary>
+        <p style="padding:0 20px 18px; color:#5b6779; font-size:14.5px;">Yes — the name generator, the domain suggestions, and even building a full website for that name are all free while we're in beta. No card, no sign-up.</p>
+      </details>
+      <details class="faq-item" style="border:1px solid #e5e9f0; border-radius:12px; background:#fff; margin-bottom:12px; overflow:hidden;">
+        <summary style="padding:16px 20px; font-weight:700; cursor:pointer;">How do I know the domain is available?</summary>
+        <p style="padding:0 20px 18px; color:#5b6779; font-size:14.5px;">We suggest a clean, brandable .com built from your name. Check final availability at any registrar (Namecheap, GoDaddy, etc.) — the suggestion is almost always free to register.</p>
+      </details>
+      <details class="faq-item" style="border:1px solid #e5e9f0; border-radius:12px; background:#fff; margin-bottom:12px; overflow:hidden;">
+        <summary style="padding:16px 20px; font-weight:700; cursor:pointer;">What happens when I click a name?</summary>
+        <p style="padding:0 20px 18px; color:#5b6779; font-size:14.5px;">It opens our AI Delivery Studio with that name pre-filled and generates the full website automatically — landing page, services, AI chatbot, WhatsApp booking, the lot. Download it or publish it free.</p>
+      </details>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="mark" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H10L8.5 22 17 10.5h-5.5L13 2Z" fill="#fff"/></svg>
+            </span>
+            <span>NexaFlow<span class="accent">AI</span></span>
+          </a>
+          <p class="footer-about">Turn visitors into customers — automatically. AI websites &amp; WhatsApp automation for ambitious local businesses.</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <div class="footer-links">
+            <a href="services.html">Business Websites</a>
+            <a href="services.html">AI Customer Assistant</a>
+            <a href="services.html">WhatsApp Lead Capture</a>
+            <a href="services.html">Appointment Booking</a>
+            <a href="services.html">Google Maps &amp; Analytics</a>
+          </div>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+            <a href="settings.html">Account &amp; income</a>
+            <a href="feedback.html">Leave a review</a>
+            <a href="pay.html">Pay online</a>
+            <a href="login.html">Sign in / Dashboard</a>
+            <a href="demo-chatbot.html">Live Demos</a>
+            <a href="ai-studio.html">AI Studio</a>
+            <a href="dashboard.html">Client Dashboard</a>
+          </div>
+        </div>
+        <div>
+          <h4>Free tools</h4>
+          <div class="footer-links">
+            <a href="business-name-generator.html">Business Name Generator</a>
+            <a href="whatsapp-reply-builder.html">WhatsApp Reply Builder</a>
+          </div>
+          <h4 style="margin-top:18px;">Get in touch</h4>
+          <div class="footer-contact">
+            <a href="https://wa.me/233545886354" target="_blank" rel="noopener">WhatsApp: +233 54 588 6354</a>
+            <a href="mailto:abdulmanafbashiru94@gmail.com">abdulmanafbashiru94@gmail.com</a>
+            <span>Accra, Greater Accra, Ghana</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 NexaFlow AI. All rights reserved.</span>
+        <span>Made for businesses that want more customers.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/ai-studio.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var AI = window.NexaAI;
+      function $(id) { return document.getElementById(id); }
+      function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]; }); }
+      function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+      var BANK = {
+        salon:       { nouns:['Beauty','Glow','Hair','Styles','Spa','Touch','Polish','Salon'], adjs:['Luxe','Golden','Pure','Velvet','Glam','Silk','Radiant','Divine'] },
+        restaurant:  { nouns:['Kitchen','Table','Bite','Plate','Spice','Grill','Cuisine','Chop'], adjs:['Fresh','Golden','Royal','Savory','Hot','Grand','Blue','Urban'] },
+        fashion:     { nouns:['Threads','Style','Wear','Closet','Label','Trends','Attire','Mode'], adjs:['Chic','Bold','Classy','Velvet','Urban','Pure','Golden','Moda'] },
+        gym:         { nouns:['Fitness','Fit','Strength','Body','Power','Shape','Core','Iron'], adjs:['Prime','Iron','Peak','Max','Pure','Elite','Strong','Swift'] },
+        clinic:      { nouns:['Care','Health','Clinic','Wellness','Med','Cure','Life','Plus'], adjs:['Prime','Trust','Pure','Total','Safe','Well','Bright','Clear'] },
+        realestate:  { nouns:['Homes','Estates','Properties','Lands','Spaces','Reality','Shelter','Acres'], adjs:['Prime','Golden','Trust','Grand','Secure','First','Choice','Key'] },
+        school:      { nouns:['Academy','School','Institute','College','Class','Learning','Tutor','Minds'], adjs:['Bright','Prime','Golden','Smart','Rising','Excel','Great','Future'] },
+        hotel:       { nouns:['Suites','Lodge','Inn','Hotel','Palms','Haven','Rest','Court'], adjs:['Royal','Grand','Golden','Palm','Serene','Harbor','Sunrise','Crown'] },
+        auto:        { nouns:['Motors','Auto','Garage','Cars','Wheels','Drives','Fix','Works'], adjs:['Prime','Turbo','Fast','Master','Sure','Pro','Quick','Ace'] },
+        other:       { nouns:['Hub','Studio','Co','House','Works','Point','Central','Corner'], adjs:['Prime','Golden','Trust','Nova','Peak','Alpha','Bright','Sure'] }
+      };
+      var FIRST = ['Ama','Kofi','Efua','Kwame','Akosua','Yaw','Naa','Kojo','Abena','Esi','Adwoa','Fiifi'];
+      var SUFFIX = ['Studio','Lounge','Hub','House','Spot','Atelier','Suite','Room','Co','Works'];
+
+      function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+      function generate() {
+        var type = $('genType').value;
+        var word = $('genWord').value.replace(/^\s+|\s+$/g, '');
+        var bank = BANK[type] || BANK.other;
+        var names = [];
+        var seen = {};
+
+        function add(n) {
+          n = String(n || '').replace(/\s+/g, ' ').replace(/^\s+|\s+$/g, '');
+          if (!n || n.length < 3 || seen[n.toLowerCase()]) { return; }
+          seen[n.toLowerCase()] = true;
+          names.push(n);
+        }
+
+        var tries = 0;
+        while (names.length < 12 && tries < 500) {
+          tries++;
+          var a = pick(bank.adjs), n = pick(bank.nouns), n2 = pick(bank.nouns), s = pick(SUFFIX), f = pick(FIRST);
+          add(a + ' ' + n);
+          if (word) {
+            add(cap(word) + ' ' + n);
+            // avoid redundant pairs like "Gold Golden"
+            if (a.toLowerCase().indexOf(word.toLowerCase()) === -1 && word.toLowerCase().indexOf(a.toLowerCase()) === -1) {
+              add(cap(word) + ' ' + a + ' ' + n);
+            }
+          }
+          add('The ' + n + ' ' + s);
+          add(n + ' & ' + n2);
+          add(a + ' ' + n + ' ' + s);
+          add(f + "'s " + n + ' ' + s);
+          if (word) { add(cap(word) + ' ' + s); }
+          add(a + ' ' + s);
+        }
+        return names.slice(0, 12);
+      }
+
+      function render() {
+        var city = $('genCity').value.replace(/^\s+|\s+$/g, '');
+        var type = $('genType').value;
+        var names = generate();
+        var box = $('nameResults');
+        var html = '<h2 style="font-size:22px; margin-bottom:6px;">Your name ideas</h2>' +
+          '<p style="color:#64748b; font-size:14px; margin-bottom:20px;">Tap a name to build its website free — the AI generates it in ~30 seconds.</p>' +
+          '<div style="display:flex; flex-wrap:wrap; margin:-8px;">';
+        for (var i = 0; i < names.length; i++) {
+          var dom = AI ? AI.domainName(names[i], city) : '';
+          var link = 'ai-studio.html?b=' + encodeURIComponent(names[i]) + '&t=' + encodeURIComponent(type) + '&go=1';
+          html +=
+            '<div style="width:calc(33.333% - 16px); margin:8px; min-width:220px; flex:1 1 220px;">' +
+              '<a href="' + link + '" style="display:block; background:#fff; border:1px solid #e5e9f0; border-radius:14px; padding:18px; text-decoration:none; transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;" onmouseover="this.style.transform=\'translateY(-3px)\';this.style.boxShadow=\'0 14px 28px -12px rgba(15,23,42,.16)\';this.style.borderColor=\'#c7d2fe\';" onmouseout="this.style.transform=\'\';this.style.boxShadow=\'\';this.style.borderColor=\'\';">' +
+                '<div style="font-weight:800; font-size:17px; color:#0f172a;">' + esc(names[i]) + '</div>' +
+                '<div style="font-size:13px; color:#4f46e5; font-weight:600; margin-top:4px;">' + esc(dom) + '</div>' +
+                '<div style="font-size:12.5px; color:#047857; font-weight:700; margin-top:10px;">Build website free →</div>' +
+              '</a>' +
+            '</div>';
+        }
+        html += '</div>';
+        box.innerHTML = html;
+        box.style.display = 'block';
+        box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      $('genBtn').addEventListener('click', render);
+      $('genWord').addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); render(); } });
+    })();
+  </script>
+</body>
+</html>
