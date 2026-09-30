@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /login.html
+Disallow: /signup.html
+Disallow: /dashboard.html
+Disallow: /settings.html
+Disallow: /pay.html
+
+Sitemap: https://nexaflowai.surge.sh/sitemap.xml
