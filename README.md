@@ -3,7 +3,7 @@
 Static website source for **NexaFlow AI** — an AI website + WhatsApp automation
 service for small businesses (7-day delivery, packages from $250).
 
-Live site: https://nexaflowai.surge.sh/
+Live site: https://abdulmanafbashiru94-web.github.io/nexaflow-ai/
 
 > Source captured from the live deployment on 2026-09-29 (all pages, CSS, JS,
 > and fonts included). No build step required — it is a plain static site.
@@ -42,12 +42,17 @@ python3 -m http.server 8080
 # open http://localhost:8080
 ```
 
-## Redeploy to surge.sh
+## Deploy
+
+Hosting: **GitHub Pages** — pushing to `main` auto-publishes the site at
+`https://abdulmanafbashiru94-web.github.io/nexaflow-ai/`
 
 ```bash
-npm install -g surge
-surge ./nexaflow-ai nexaflowai.surge.sh
+git add -A && git commit -m "update" && git push
 ```
+
+(Repo → Settings → Pages → Source: `main` / root. The `.nojekyll` file
+disables Jekyll processing so files are served as-is.)
 
 ## Notes
 

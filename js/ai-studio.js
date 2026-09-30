@@ -832,7 +832,7 @@
       '<p class="hint" id="bookHint"></p>' +
       '</form></div></div></section>\n' +
       '<footer><div class="wrap">\u00a9 ' + new Date().getFullYear() + ' ' + esc(p.business) + ' \u2014 ' + esc(p.city) + ' \u00b7 WhatsApp +233 ' + wa.slice(3) +
-      '<div class="credits">Website built with <a href="https://nexaflowai.surge.sh/?ref=' + encodeURIComponent(slugify(p.business)) + '" target="_blank" rel="noopener">NexaFlow AI</a> \u2014 AI websites &amp; WhatsApp automation</div>' +
+      '<div class="credits">Website built with <a href="https://abdulmanafbashiru94-web.github.io/nexaflow-ai/?ref=' + encodeURIComponent(slugify(p.business)) + '" target="_blank" rel="noopener">NexaFlow AI</a> \u2014 AI websites &amp; WhatsApp automation</div>' +
       '</div></footer>\n' +
       '<a class="wa-float" href="https://wa.me/' + wa + '">\ud83d\udcac WhatsApp us</a>\n' +
       '<div class="chat-bubble" id="chatBubble" role="button" aria-label="Chat with our assistant">' +
