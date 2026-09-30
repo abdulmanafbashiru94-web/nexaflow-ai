@@ -134,9 +134,9 @@
             <div class="field">
               <label for="inStyle">Website style</label>
               <select id="inStyle">
-                <option value="luxury" selected>Luxury — elegant, gold &amp; serif</option>
+                <option value="modern" selected>Professional — clean, light &amp; modern</option>
+                <option value="luxury">Luxury — elegant, gold &amp; serif</option>
                 <option value="dark">Noir — black &amp; gold premium</option>
-                <option value="modern">Modern — clean, light &amp; bold</option>
               </select>
             </div>
 
@@ -792,7 +792,7 @@
           'SITE DETAILS\n' +
           '  Business: ' + result.profile.business + '\n' +
           '  City: ' + result.profile.city + '\n' +
-          '  Style: ' + (styleNow() === 'luxury' ? 'Luxury (gold & serif)' : styleNow() === 'dark' ? 'Noir (black & gold)' : 'Modern (clean & bold)') + '\n' +
+          '  Style: ' + (styleNow() === 'luxury' ? 'Luxury (gold & serif)' : styleNow() === 'dark' ? 'Noir (black & gold)' : 'Professional (clean & modern)') + '\n' +
           '  WhatsApp: +233 ' + (String(result.profile.phone || '').replace(/[^0-9]/g, '') || '0545886354') + '\n';
         var files = [
           { name: 'index.html', data: AI.buildSiteHtml(result, styleNow()) },
